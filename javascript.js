@@ -37,3 +37,67 @@ document.querySelectorAll('nav a').forEach(anchor => {
         target.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+// Lightbox: open clicked image in fullscreen overlay
+(function() {
+    // create lightbox elements
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.innerHTML = `
+        <div class="box" role="dialog" aria-modal="true">
+            <button class="close" aria-label="Close">✕</button>
+            <img alt="" />
+            <div class="caption" aria-hidden="false"></div>
+        </div>
+    `;
+    document.body.appendChild(lb);
+
+    const lbImg = lb.querySelector('img');
+    const lbCaption = lb.querySelector('.caption');
+    const lbClose = lb.querySelector('.close');
+
+    function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCaption.textContent = alt || '';
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+    }
+    function closeLightbox() {
+        lb.classList.remove('open');
+        lbImg.src = '';
+        document.body.style.overflow = '';
+    }
+
+    // close handlers
+    lb.addEventListener('click', (e) => {
+        if (e.target === lb) closeLightbox();
+    });
+    lbClose.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
+    });
+
+    // bind to thumbs (products, gallery and banner)
+    function bindThumbs() {
+        const thumbs = document.querySelectorAll('.product img, .gallery-grid img, .banner-thumb');
+        thumbs.forEach(img => {
+            img.style.touchAction = 'manipulation';
+            img.addEventListener('click', () => openLightbox(img.src, img.alt));
+            img.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(img.src, img.alt);
+                }
+            });
+            // make focusable for keyboard users
+            img.tabIndex = 0;
+        });
+    }
+
+    // initial bind and re-bind on DOM changes (basic)
+    bindThumbs();
+    const observer = new MutationObserver(bindThumbs);
+    observer.observe(document.body, { childList: true, subtree: true });
+})();
