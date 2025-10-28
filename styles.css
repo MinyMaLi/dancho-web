@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #c7b793;
+    background-color: #a3b68a; /* swapped: use previous header color */
 }
 
 header {
@@ -11,7 +11,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #a3b68a;
+    background-color: #c7b793; /* swapped: use previous body color */
     color: #F5F5DC;
 }
 
@@ -29,6 +29,17 @@ nav a {
     color: #F5F5DC;
     text-decoration: none;
     font-weight: 700;
+    transition: color 160ms ease, text-decoration-color 160ms ease, transform 120ms ease;
+}
+
+/* Header buttons hover / focus states */
+nav a:hover,
+nav a:focus-visible {
+    color: #354a2f;
+    text-decoration: underline;
+    transform: translateY(-1px);
+    outline: none;
+    box-shadow: 0 6px 18px rgba(53,74,47,0.08);
 }
 
 #lang-toggle {
@@ -37,6 +48,45 @@ nav a {
     border: none;
     padding: 0.5rem;
     cursor: pointer;
+    transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease, transform 120ms ease;
+    border-radius: 6px;
+}
+#lang-toggle:hover,
+#lang-toggle:focus {
+    background: #e9eadf;
+    color: #354a2f;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(53,74,47,0.10);
+    outline: none;
+}
+
+/* Burger hover/focus */
+.burger {
+    display: none; /* shown on small screens via media query */
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    transition: background 160ms ease, transform 120ms ease, box-shadow 160ms ease;
+    border-radius: 8px;
+}
+.burger:hover,
+.burger:focus {
+    background: rgba(0,0,0,0.04);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    outline: none;
+}
+.burger:focus-visible,
+#lang-toggle:focus-visible,
+nav a:focus-visible {
+    box-shadow: 0 0 0 4px rgba(53,74,47,0.14);
 }
 
 section {
@@ -54,12 +104,50 @@ section {
 }
 
 #home .banner {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    text-align: center;
-    background: transparent; /* keep banner inside section panel */
+    padding: 0;
+}
+
+/* Banner thumbnail behaves like gallery/product thumbs but scales responsively */
+.banner-thumb {
+    width: 100%;
+    max-width: 1200px;
+    display: block;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-height: 60vh;           /* prevent it from being taller than viewport on large screens */
+    object-fit: cover;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Tweak sizes for medium and small screens */
+@media (max-width: 1024px) {
+    .banner-thumb {
+        max-width: 900px;
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-thumb {
+        aspect-ratio: 4 / 3;
+        max-height: 45vh;
+    }
+    #home h1 { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+    .banner-thumb {
+        aspect-ratio: 1 / 1;
+        max-height: 40vh;
+        border-radius: 6px;
+    }
+    #home h1 { font-size: 1.3rem; line-height: 1.2; }
 }
 
 #home h1 {
@@ -87,32 +175,17 @@ section {
 
 /* Hover / tap affordance for thumbnails */
 .product img,
-.gallery-grid img,
-.banner-thumb {
+.gallery-grid img {
     cursor: pointer;
     transition: transform 240ms ease, box-shadow 240ms ease, opacity 180ms ease;
     will-change: transform;
 }
 .product img:hover,
 .gallery-grid img:hover,
-.banner-thumb:hover,
 .product img:active,
-.gallery-grid img:active,
-.banner-thumb:active {
+.gallery-grid img:active {
     transform: scale(1.03);
     box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-}
-
-/* make banner image behave like gallery/product thumbnails */
-.banner-thumb {
-    width: 100%;
-    max-width: 900px;
-    display: block;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 0.5rem;
 }
 
 .gallery-grid {
@@ -225,7 +298,7 @@ section {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #a3b68a;
+    background-color: #c7b793;
     color: #354a2f;
 }
 @media (max-width: 768px) {
