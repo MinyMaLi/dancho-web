@@ -1,22 +1,34 @@
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #a3b68a; /* swapped: use previous header color */
 }
 
+/* Use Playfair Display for headings for a classic serif look */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-weight: 700;
+}
+
+/* Ensure form controls and other text use Lato */
+input, textarea, button, select, label {
+    font-family: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #c7b793; /* swapped: use previous body color */
-    color: #F5F5DC;
+    background-color: #F9EFD8;
+    color: #354a2f; /* changed to a darker, readable color */
 }
 
 .logo img {
-    height: 50px;
+    height: 150px;
 }
 
 nav ul {
@@ -26,7 +38,7 @@ nav ul {
 }
 
 nav a {
-    color: #F5F5DC;
+    color: #354a2f; /* darker header link color */
     text-decoration: none;
     font-weight: 700;
     transition: color 160ms ease, text-decoration-color 160ms ease, transform 120ms ease;
@@ -43,8 +55,8 @@ nav a:focus-visible {
 }
 
 #lang-toggle {
-    background: #F5F5DC;
-    color: #4CAF50;
+    background: #354a2f;
+    color: #F5F5DC;
     border: none;
     padding: 0.5rem;
     cursor: pointer;
@@ -112,47 +124,66 @@ section {
     padding: 0;
 }
 
-/* Banner thumbnail behaves like gallery/product thumbs but scales responsively */
-.banner-thumb {
+/* make banner a positioned container so text can overlay the image */
+.banner {
+    position: relative;
     width: 100%;
-    max-width: 1200px;
     display: block;
-    aspect-ratio: 16 / 9;
+}
+
+/* image sits below content */
+.banner-thumb {
+    display: block;
+    width: 100%;
     height: auto;
-    max-height: 60vh;           /* prevent it from being taller than viewport on large screens */
     object-fit: cover;
     border-radius: 8px;
-    overflow: hidden;
+    z-index: 1;
 }
 
-/* Tweak sizes for medium and small screens */
-@media (max-width: 1024px) {
-    .banner-thumb {
-        max-width: 900px;
-        max-height: 50vh;
-    }
+/* overlay content centered on top of the image */
+.banner-content {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    z-index: 2;
+    pointer-events: none; /* allow clicks to pass to image if needed */
 }
 
+/* optional semi-transparent backdrop behind text for readability */
+.banner-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.18));
+    border-radius: 8px;
+    z-index: -1;
+}
+
+/* text styling */
+.banner-content h1,
+.banner-content p {
+    color: #ffffff;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    margin: 0;
+    pointer-events: auto; /* allow focus if needed */
+}
+
+/* responsive adjustments */
 @media (max-width: 768px) {
-    .banner-thumb {
-        aspect-ratio: 4 / 3;
-        max-height: 45vh;
-    }
-    #home h1 { font-size: 1.8rem; }
+    .banner-content { padding: 0.9rem; }
+    .banner-content h1 { font-size: 1.6rem; }
+    .banner-content p { font-size: 0.95rem; }
 }
-
 @media (max-width: 480px) {
-    .banner-thumb {
-        aspect-ratio: 1 / 1;
-        max-height: 40vh;
-        border-radius: 6px;
-    }
-    #home h1 { font-size: 1.3rem; line-height: 1.2; }
-}
-
-#home h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    .banner-content h1 { font-size: 1.25rem; }
+    .banner-content p { font-size: 0.9rem; }
 }
 
 .product-grid, .gallery-grid {
@@ -298,8 +329,18 @@ section {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #c7b793;
+    background-color: #F9EFD8; /* updated */
     color: #354a2f;
+}
+footer .contact-info ul {
+    list-style: none;
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    padding-left: 0; /* remove default indent/bullets */
+}
+footer .contact-info ul li {
+    margin: 0 0 0.25rem 0;
+    padding-left: 0;
 }
 @media (max-width: 768px) {
     header {
@@ -316,5 +357,43 @@ footer {
     .map iframe {
         width: 100%;
         height: 300px;
+    }
+}
+
+/* Mobile nav: hide by default, show when header has .nav-open */
+@media (max-width: 768px) {
+    .burger { display: inline-flex; }
+
+    header nav {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: rgba(255,255,255,0.98);
+        transform: translateY(-8px) scaleY(0.98);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 220ms ease, opacity 220ms ease;
+        padding: 1rem;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    header.nav-open nav {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin: 0;
+    }
+
+    /* ensure header stays on top when menu opens */
+    header.nav-open {
+        z-index: 999;
     }
 }

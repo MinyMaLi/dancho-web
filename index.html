@@ -21,8 +21,14 @@
 <body>
     <header>
         <div class="logo">
-            <img src="https://via.placeholder.com/150x50/4CAF50/F5F5DC?text=Vaše+Olivy" alt="Vaše Olivy Logo" />
+            <img src="/pics/logo.png" alt="Vaše Olivy Logo" />
         </div>
+
+        <!-- Burger for mobile -->
+        <button class="burger" aria-label="Menu" aria-expanded="false" type="button">
+            <span class="burger-box"><span class="burger-inner"></span></span>
+        </button>
+
         <nav>
             <ul>
                 <li><a href="#home" data-en="Home" data-cs="Domů">Domů</a></li>
@@ -37,46 +43,40 @@
 
     <section id="home">
         <div class="banner">
-            <h1 data-en="Welcome to Vaše Olivy" data-cs="Vítejte ve Vaše Olivy">Vítejte ve Vaše Olivy</h1>
-            <p data-en="Premium olives and Mediterranean delicacies" data-cs="Prémiové olivy a středomořské lahůdky">Prémiové olivy a středomořské lahůdky</p>
-            <img class="banner-thumb" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800" alt="Olivy a olivový olej" />
+            <img class="banner-thumb" src="/pics/olives_header.jpg" alt="Olivy a olivový olej" />
+            <div class="banner-content">
+                <h1 data-en="Welcome to Vaše Olivy" data-cs="Vítejte ve Vaše Olivy">Vítejte v Moje Oříšky a Vaše Olivy
+</h1>
+                <p data-en="Premium olives and Mediterranean delicacies" data-cs="Prémiové olivy a středomořské lahůdky">Prémiové olivy přímo z Řecka</p>
+            </div>
         </div>
     </section>
 
     <section id="about">
         <h2 data-en="About Us" data-cs="O nás">O nás</h2>
-        <p data-en="We are a small family business focused on selling high-quality and natural products. Behind the Vaše Olivy brand is a small team of people who love honest food. We import first-class Greek olives and olive oils and serve as a distributor for the unique spicy specialties of the Chilli Hills brand. Our goal is to show that olives are not a luxury food — the true luxury is in their taste and quality. We believe that olives can be delicious, healthy, and accessible to everyone. We bring authentic flavors of the Mediterranean and the Balkans — with an emphasis on origin, quality, and genuine taste." data-cs="Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a přírodních produktů. Za značkou Vaše Olivy stojí malý tým lidí, kteří milují poctivé jídlo. Dovážíme prvotřídní řecké olivy a olivové oleje a sloužíme jako distributor unikátních pikantních specialit značky Chilli Hills. Naším cílem je ukázat, že olivy nejsou luxusní potravina – skutečný luxus je v jejich chuti a kvalitě. Věříme, že olivy mohou být chutné, zdravé a dostupné pro každého. Přinášíme autentické chutě Středomoří a Balkánu – s důrazem na původ, kvalitu a opravdovou chuť.">
-            Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a přírodních produktů. Za značkou Vaše Olivy stojí malý tým lidí, kteří milují poctivé jídlo. Dovážíme prvotřídní řecké olivy a olivové oleje a sloužíme jako distributor unikátních pikantních specialit značky Chilli Hills. Naším cílem je ukázat, že olivy nejsou luxusní potravina – skutečný luxus je v jejich chuti a kvalitě. Věříme, že olivy mohou být chutné, zdravé a dostupné pro každého. Přinášíme autentické chutě Středomoří a Balkánu – s důrazem na původ, kvalitu a opravdovou chuť.
-        </p>
+        <p data-en="We are a small family business focused on selling high-quality and natural products. Behind the Vaše Olivy brand is a small team of people who love honest food. We import premium Greek olives and olive oils and serve as a distributor of unique spicy specialties of the Chilli Hills brand. Our goal is to show that olives are not a luxury food - real luxury is in their taste and quality. We believe that olives can be delicious, healthy and affordable for everyone. We bring authentic flavors of the Mediterranean and the Balkans - with an emphasis on origin, quality and real taste." data-cs="Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a            přírodních produktů. Za značkou Vaše Olivy stojí malý tým lidí, kteří milují poctivé    jídlo. Dovážíme prvotřídní řecké olivy a olivové oleje a sloužíme jako distributor unikátních pikantních specialit značky Chilli Hills. Naším cílem je ukázat, že olivy nejsou luxusní potravina – skutečný luxus je v jejich chuti a kvalitě. Věříme, že olivy mohou být chutné, zdravé a dostupné pro každého. Přinášíme autentické chutě Středomoří a Balkánu – s důrazem na původ, kvalitu a opravdovou chuť.">
+Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a            přírodních produktů. Za značkou Vaše Olivy stojí malý tým lidí, kteří milují poctivé    jídlo. Dovážíme prvotřídní řecké olivy a olivové oleje a sloužíme jako distributor unikátních pikantních specialit značky Chilli Hills. Naším cílem je ukázat, že olivy nejsou luxusní potravina – skutečný luxus je v jejich chuti a kvalitě. Věříme, že olivy mohou být chutné, zdravé a dostupné pro každého. Přinášíme autentické chutě Středomoří a Balkánu – s důrazem na původ, kvalitu a opravdovou chuť.
+</p>
     </section>
 
     <section id="products">
         <h2 data-en="Our Products" data-cs="Naše produkty">Naše produkty</h2>
         <div class="product-grid">
             <div class="product">
-                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Olivy" />
+                <img src="pics/olives_black.jpg" alt="Olivy" />
                 <h3 data-en="Olives" data-cs="Olivy">Olivy</h3>
                 <p data-en="Premium Greek olives" data-cs="Prémiové řecké olivy">Prémiové řecké olivy</p>
             </div>
+
             <div class="product">
-                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Olivový olej" />
-                <h3 data-en="Olive Oils" data-cs="Olivové oleje">Olivové oleje</h3>
-                <p data-en="Extra virgin olive oils" data-cs="Extra panenské olivové oleje">Extra panenské olivové oleje</p>
-            </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Sušené ovoce" />
+                <img src="pics/rasins.jpg" alt="Sušené ovoce" />
                 <h3 data-en="Dried Fruits" data-cs="Sušené ovoce">Sušené ovoce</h3>
                 <p data-en="Natural dried fruits" data-cs="Přírodní sušené ovoce">Přírodní sušené ovoce</p>
             </div>
             <div class="product">
-                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Oříšky" />
-                <h3 data-en="Nuts" data-cs="Oříšky">Oříšky</h3>
+                <img src="pics/olive_pepper.jpg" alt="Oříšky" />
+                <h3 data-en="Nuts" data-cs="Oříšky">Směs prémiových olivy</h3>
                 <p data-en="Assorted premium nuts" data-cs="Směs prémiových oříšků">Směs prémiových oříšků</p>
-            </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Lahůdky" />
-                <h3 data-en="Delicacies" data-cs="Lahůdky">Lahůdky</h3>
-                <p data-en="Chilli Hills specialties" data-cs="Speciality Chilli Hills">Speciality Chilli Hills</p>
             </div>
         </div>
     </section>
@@ -84,37 +84,26 @@
     <section id="gallery">
         <h2 data-en="Gallery" data-cs="Galerie">Galerie</h2>
         <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Interiér obchodu" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Produkty v obchodě" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Olivy na stole" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Oříšky a ovoce" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Lahůdky" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Olivový olej" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Interiér 2" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=300" alt="Produkty 2" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Oříšky 2" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Lahůdky 2" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Interiér 3" />
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Olivy 2" />
+            <img src="pics/olives1.jpg" alt="Oliva 1" />
+            <img src="pics/olives2.jpg" alt="Oliva 2" />
+            <img src="pics/olives 3.jpg" alt="Oliva 3" />
+            <img src="pics/olives4.jpg" alt="Oliva 4" />
+            <img src="pics/olives5.jpg" alt="Oliva 5" />
+            <img src="pics/olives6.jpg" alt="Oliva 6" />
+            <img src="pics/olives7.jpg" alt="Oliva 7" />
+            <img src="pics/olives8.jpg" alt="Oliva 8" />
+            <img src="pics/olives9.jpg" alt="Oliva 9" />
+            <img src="pics/olives10.jpg" alt="Oliva 10" />
+            <img src="pics/olives11.jpg" alt="Oliva 11" />
+            <img src="pics/olives12.jpg" alt="Oliva 12" />
+            <img src="pics/olives13.jpg" alt="Oliva 13" />
+            <img src="pics/olives14.jpg" alt="Oliva 14" />
+            <img src="pics/olives15.jpg" alt="Oliva 15" />
         </div>
     </section>
 
     <section id="contact">
-        <h2 data-en="Contact" data-cs="Kontakt">Kontakt</h2>
-        <div class="contact-info">
-            <p><strong data-en="Address:" data-cs="Adresa:">Adresa:</strong> 28. pluku 128/12, Prague 10, Czech Republic</p>
-            <p><strong data-en="Phone:" data-cs="Telefon:">Telefon:</strong> +420 608 654 715</p>
-            <p><strong data-en="Email:" data-cs="Email:">Email:</strong> mojeorisky@gmail.com</p>
-            <p><strong data-en="Opening Hours:" data-cs="Otevírací doba:">Otevírací doba:</strong></p>
-            <ul>
-                <li data-en="Monday–Friday: 9:00–18:00" data-cs="Pondělí–Pátek: 9:00–18:00">Pondělí–Pátek: 9:00–18:00</li>
-                <li data-en="Saturday: 10:00–14:00" data-cs="Sobota: 10:00–14:00">Sobota: 10:00–14:00</li>
-            </ul>
-            <div class="social-links">
-                <a href="#" data-en="Facebook" data-cs="Facebook">Facebook</a> | 
-                <a href="#" data-en="Instagram" data-cs="Instagram">Instagram</a>
-            </div>
-        </div>
+        
         <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.123456789012!2d14.456789!3d50.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9b1234567890%3A0x123456789abcdef!2s28.%20pluku%20128%2F12%2C%20Praha%2010%2C%20Czech%20Republic!5e0!3m2!1sen!2scz!4v1234567890123!5m2!1sen!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
@@ -130,6 +119,21 @@
     </section>
 
     <footer>
+        <h2 data-en="Contact" data-cs="Kontakt"></h2>
+        <div class="contact-info">
+            <p><strong data-en="Address:" data-cs="Adresa:">Adresa:</strong> 28. pluku 128/12, Prague 10, Czech Republic</p>
+            <p><strong data-en="Phone:" data-cs="Telefon:">Telefon:</strong> +420 608 654 715</p>
+            <p><strong data-en="Email:" data-cs="Email:">Email:</strong> mojeorisky@gmail.com</p>
+            <p><strong data-en="Opening Hours:" data-cs="Otevírací doba:">Otevírací doba:</strong></p>
+            <ul>
+                <li data-en="Monday–Friday: 9:00–18:00" data-cs="Pondělí–Pátek: 9:00–18:00">Pondělí–Pátek: 9:00–18:00</li>
+                <li data-en="Saturday: 10:00–14:00" data-cs="Sobota: 10:00–14:00">Sobota: 10:00–14:00</li>
+            </ul>
+            <div class="social-links">
+                <a href="#" data-en="Facebook" data-cs="Facebook">Facebook</a> | 
+                <a href="#" data-en="Instagram" data-cs="Instagram">Instagram</a>
+            </div>
+        </div>
         <p>&copy; 2023 Moje Oříšky s.r.o. | IČO: 23225254 | DIČ: CZ23225254</p>
     </footer>
 

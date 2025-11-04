@@ -101,3 +101,54 @@ document.querySelectorAll('nav a').forEach(anchor => {
     const observer = new MutationObserver(bindThumbs);
     observer.observe(document.body, { childList: true, subtree: true });
 })();
+
+// Mobile burger menu toggle
+(function() {
+    const burger = document.querySelector('.burger');
+    const header = document.querySelector('header');
+    const nav = document.querySelector('header nav');
+
+    if (!burger || !header || !nav) return;
+
+    function openNav() {
+        header.classList.add('nav-open');
+        burger.setAttribute('aria-expanded', 'true');
+        // prevent body scroll on mobile when menu open
+        document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+        header.classList.remove('nav-open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    burger.addEventListener('click', (e) => {
+        const open = header.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    // Close when clicking a nav link (mobile)
+    nav.addEventListener('click', (e) => {
+        const a = e.target.closest('a');
+        if (a && window.innerWidth <= 768) closeNav();
+    });
+
+    // Close on click outside (mobile)
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth > 768) return;
+        if (!header.contains(e.target) && header.classList.contains('nav-open')) {
+            closeNav();
+        }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && header.classList.contains('nav-open')) closeNav();
+    });
+
+    // Optional: close nav on resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && header.classList.contains('nav-open')) closeNav();
+    });
+})();
