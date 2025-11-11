@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="cs">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Olivy — Naše produkty</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -21,160 +25,91 @@
 
     <nav>
       <ul>
-        <li><a href="index.html#home">Domů</a></li>
-        <li><a href="index.html#about">O nás</a></li>
-        <li><a href="index.html#products">Naše produkty</a></li>
-        <li><a href="index.html#gallery">Galerie</a></li>
-        <li><a href="index.html#contact">Kontakt</a></li>
+        <li><a href="#home" data-en="Home" data-cs="Domů">Domů</a></li>
+        <li><a href="/olivy.html" data-en="About Us" data-cs="O nás">Olivy</a></li>
+        <li><a href="/vina.html" data-en="Our Products" data-cs="Naše produkty">VÍNA</a></li>
+        <li><a href="/syry.html" data-en="Gallery" data-cs="Galerie">Sýry z Bulharska</a></li>
+        <li><a href="/coffee.html" data-en="Contact" data-cs="Kontakt">Dabov Coffee</a></li>
+
       </ul>
     </nav>
     <button id="lang-toggle" data-lang="cs">EN</button>
   </header>
 
   <main>
-    <section class="product-list">
-      <h1>Olivy</h1>
-      <p>Sem přidejte úplný seznam oliv — položky, popisy, ceny, kódy atd.</p>
 
-        <section id="gallery">
-            <h2 data-en="Gallery" data-cs="Galerie">Galerie</h2>
 
-            <ol class="gallery-list" style="list-style:decimal-leading-zero;padding-left:1.25rem;margin:0;">
-              <li>
-                <figure>
-                  <img src="pics/olives15.jpg" alt="Kalamata Blonde" />
-                  <figcaption>
-                    <strong>Kalamata Blonde</strong> — Kalamata Blonde je exkluzivní varianta klasické olivy Kalamata s přirozeně světlejší barvou a jemně ovocnou chutí. Dužina je pevná, šťavnatá a má lehce nasládlý tón, který dokonale ladí s vínem, sýry i saláty. Ocení ji každý, kdo má rád vyváženou chuť bez výrazné hořkosti.
-                  </figcaption>
-                </figure>
-              </li>
 
-              <li>
-                <figure>
-                  <img src="pics/olives4.jpg" alt="Kalamata" />
-                  <figcaption>
-                    <strong>Kalamata</strong> — Kalamata – královna mezi olivami! Typická tmavě fialová barva, plná chuť a jemná dužina – ideální k vínu, sýrům nebo jen tak na zobání.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives2.jpg" alt="Peloponéské olivy" />
-                  <figcaption>
-                    <strong>Peloponéské olivy</strong> — Pochází z oblasti Peloponés, Řecko. Tento druh oliv se vyznačuje svou sytě fialovou barvou, masitou dužinou a bohatou, vyváženou chutí s jemnou hořkostí a nádechem vína.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives5.jpg" alt="Amfissa" />
-                  <figcaption>
-                    <strong>Amfissa</strong> — Zkuste chuť, která vás přenese přímo do slunného Řecka - jemná, masitá a přirozeně nasládlá Amfissa si vás získá hned po první olivě.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/rasins2.jpg" alt="Stafida (rozinka) z Amfissy" />
-                  <figcaption>
-                    <strong>Stafida (Amfissa)</strong> — Prémiové řecké olivy z oblasti Amfissa, známé svým jemným, nasládlým tónem a masitou dužinou. Tyto olivy mají přirozeně hnědou barvu, jemnou texturu a bohatou, plnou chuť, která připomíná sušené ovoce – právě proto se jim říká „stafida“ (rozinka).
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives8.jpg" alt="Velká stolní oliva" />
-                  <figcaption>
-                    <strong>Velká stolní oliva</strong> — Velká, šťavnatá a masitá oliva s jemnou, harmonickou chutí a příjemnou slaností. Díky své velikosti a kvalitě patří mezi nejvyhledávanější stolní olivy. Skvělá k vínu, sýrům, salátům nebo jen tak.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives3.jpg" alt="Plněná mandlí" />
-                  <figcaption>
-                    <strong>Plněná mandlí</strong> — Velká, šťavnatá oliva s jemnou chutí, doplněná křupavou mandlí. Spojení delikátní slanosti olivy a jemně nasládlé chuti mandle vytváří dokonalou harmonii chutí. Ideální jako pochoutka k vínu.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives12.jpg" alt="Kalamata (ručně vypeckované)" />
-                  <figcaption>
-                    <strong>Kalamata (ručně vypeckované)</strong> — Tradiční řecké olivy odrůdy Kalamata, ručně sbírané a pečlivě vypeckované. Mají výraznou fialově-hnědou barvu, jemně slanou chuť a typické ovocné aroma.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives13.jpg" alt="Olivový salát" />
-                  <figcaption>
-                    <strong>Marinovaná směs</strong> — Směs vybraných řeckých oliv různých odrůd a barev, marinovaných v olivovém oleji s bylinkami a kousky červené papriky. Vynikající chuťová kombinace, která spojuje jemnost, lehkou hořkost a svěží vůni Středomoří.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives11.jpg" alt="Olives s česnekem a oreganem" />
-                  <figcaption>
-                    <strong>Olives s česnekem a oreganem</strong> — Šťavnaté zelené olivy marinované v olivovém oleji s čerstvým česnekem a aromatickým oreganem. Jemně kyselá chuť s lehkým středomořským nádechem.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives1.jpg" alt="Olives s chilli" />
-                  <figcaption>
-                    <strong>Olives s chilli</strong> — Šťavnaté zelené olivy bez pecky marinované v olivovém oleji s kousky chilli papriček. Příjemně pikantní chuť s lehkou kyselostí a výraznou vůní Středomoří.
-                  </figcaption>
-                </figure>
-              </li>
-
-              <li>
-                <figure>
-                  <img src="pics/olives7.jpg" alt="Černá oxidovaná oliva" />
-                  <figcaption>
-                    <strong>Černá oxidovaná oliva</strong> — Jemná stolní oliva s lehce slanou chutí a typickou černou barvou získanou oxidací. Dužina je měkká, příjemně nasládlá a ideální do salátů, těstovin nebo jako chuťovka k vínu a sýrům.
-                  </figcaption>
-                </figure>
-              </li>
-            </ol>
-        </section>
-      </ul>
-
-      <p><a href="index.html#products">← Zpět na produkty</a></p>
+    <section id="gallery">
+      <h2 data-en="Gallery" data-cs="Galerie"></h2>
+      <div class="gallery-grid">
+        <img src="pics/olives15.jpg" alt="Kalamata Blonde je exkluzivní varianta klasické olivy Kalamata s
+                  přirozeně světlejší barvou a jemně ovocnou chutí. Dužina je pevná, šťavnatá a má lehce nasládlý tón,
+                  který dokonale ladí s vínem, sýry i saláty. Ocení ji každý, kdo má rád vyváženou chuť bez výrazné
+                  hořkosti" />
+        <img src="pics/olives4.jpg" alt="Kalamata – královna mezi olivami! Typická tmavě fialová barva, plná chuť a
+                jemná dužina – ideální k vínu, sýrům nebo jen tak na zobání." />
+        <img src="pics/olives2.jpg"
+          alt="Peloponéské olivy - Pochází z oblasti Peloponés, Řecko. Tento druh oliv se vyznačuje
+                svou sytě fialovou barvou, masitou dužinou a bohatou, vyváženou chutí s jemnou hořkostí a nádechem vína. " />
+        <img src="pics/olives5.jpg" alt="Amfissa - Zkuste chuť, která vás přenese přímo do slunného Řecka - jemná, masitá a
+                přirozeně nasládlá Amfissa si vás získá hned po první olivě." />
+        <img src="pics/rasins2.jpg" alt="Stafida (rozinka) z Amfissy - Prémiové řecké olivy z oblasti Amfissa, známé svým jemným,
+                nasládlým tónem a masitou dužinou. Tyto olivy mají přirozeně hnědou barvu, jemnou texturu a bohatou,
+                plnou chuť, která připomíná sušené ovoce – právě proto se jim říká „stafida“ (rozinka)." />
+        <img src="pics/olives8.jpg" alt="Velká stolní oliva — Velká, šťavnatá a masitá oliva s jemnou, harmonickou chutí a
+                příjemnou slaností. Díky své velikosti a kvalitě patří mezi nejvyhledávanější stolní olivy." />
+        <img src="pics/olives 3.jpg" alt="Plněná mandlí — Velká, šťavnatá oliva s jemnou chutí, doplněná křupavou mandlí. Spojení
+                delikátní slanosti olivy a jemně nasládlé chuti mandle vytváří dokonalou harmonii chutí." />
+        <img src="pics/olives12.jpg" alt="Kalamata (ručně vypeckované) — Tradiční řecké olivy odrůdy Kalamata, ručně sbírané a
+                pečlivě vypeckované. Mají výraznou fialově-hnědou barvu a typické ovocné aroma." />
+        <img src="pics/olives13.jpg" alt="Olivový salát — Směs vybraných řeckých oliv různých odrůd a barev, marinovaných v
+                olivovém oleji s bylinkami a kousky červené papriky." />
+        <img src="pics/olives11.jpg" alt="Olives s česnekem a oreganem — Šťavnaté zelené olivy marinované v olivovém oleji s
+                čerstvým česnekem a aromatickým oreganem." />
+        <img src="pics/olives1.jpg" alt="Olives s chilli — Šťavnaté zelené olivy bez pecky marinované v olivovém oleji s kousky
+                chilli papriček. Příjemně pikantní chuť." />
+        <img src="pics/olives7.jpg" alt="Černá oxidovaná oliva  — Jemná stolní oliva s lehce slanou chutí a typickou černou
+                barvou získanou oxidací. Dužina je měkká, příjemně nasládlá a ideální do salátů, těstovin nebo jako
+                chuťovka k vínu a sýrům." />
+      </div>
     </section>
+    <script src="javascript.js"></script>
   </main>
- <footer>
-        <h2 data-en="Contact" data-cs="Kontakt"></h2>
-        <div class="contact-info">
-            <p><strong data-en="Address:" data-cs="Adresa:">Adresa:</strong> 28. pluku 128/12, Prague 10, Czech Republic
-            </p>
-            <p><strong data-en="Phone:" data-cs="Telefon:">Telefon:</strong> +420 608 654 715</p>
-            <p><strong data-en="Email:" data-cs="Email:">Email:</strong> mojeorisky@gmail.com</p>
-            <p><strong data-en="Opening Hours:" data-cs="Otevírací doba:">Otevírací doba:</strong></p>
-            <ul>
-                <li data-en="Monday–Friday: 9:00–18:00" data-cs="Pondělí–Pátek: 9:00–18:00">Pondělí–Pátek: 9:00–18:00
-                </li>
-                <li data-en="Saturday: 10:00–14:00" data-cs="Sobota: 10:00–14:00">Sobota: 10:00–14:00</li>
-            </ul>
-            <div class="social-links">
-                <a href="#" data-en="Facebook" data-cs="Facebook">Facebook</a> |
-                <a href="#" data-en="Instagram" data-cs="Instagram">Instagram</a>
-            </div>
-        </div>
-        <p>&copy; 2023 Moje Oříšky s.r.o. | IČO: 23225254 | DIČ: CZ23225254</p>
-    </footer>
 
-  <script src="javascript.js"></script>
+  <footer>
+    <div class="footer-row">
+      <div class="contact-info">
+        <h2 data-en="Contact" data-cs="Kontakt"></h2>
+        <p><strong data-en="Address:" data-cs="Adresa:">Adresa:</strong> 28. pluku 128/12, Prague 10, Czech Republic</p>
+        <p><strong data-en="Phone:" data-cs="Telefon:">Telefon:</strong> +420 608 654 715</p>
+        <p><strong data-en="Email:" data-cs="Email:">Email:</strong> mojeorisky@gmail.com</p>
+
+
+      </div>
+
+      <div class="footer-map" aria-hidden="false">
+        <!-- small map on the right side of the footer -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.123456789012!2d14.456789!3d50.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9b1234567890%3A0x123456789abcdef!2s28.%20pluku%20128%2F12%2C%20Praha%2010%2C%20Czech%20Republic!5e0!3m2!1sen!2scz!4v1234567890123!5m2!1sen!2scz"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div class="separator" style="text-align: center;">
+      <p><strong data-en="Opening Hours:" data-cs="Otevírací doba:">Otevírací doba:</strong></p>
+      <ol style="list-style-type:none;">
+        <li data-en="Monday–Friday: 9:00–18:00" data-cs="Pondělí–Pátek: 9:00–18:00">Pondělí–Pátek: 9:00–18:00</li>
+        <li data-en="Saturday: 10:00–14:00" data-cs="Sobota: 10:00–14:00">Sobota: 10:00–14:00</li>
+      </ol>
+      <div class="social-links">
+        <a href="#" data-en="Facebook" data-cs="Facebook">Facebook</a> |
+        <a href="#" data-en="Instagram" data-cs="Instagram">Instagram</a>
+      </div>
+      <p>&copy; 2023 Moje Oříšky s.r.o. | IČO: 23225254 | DIČ: CZ23225254</p>
+    </div>
+  </footer>
+
+
 </body>
+
 </html>
