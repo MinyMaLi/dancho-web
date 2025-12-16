@@ -1,184 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaše Olivy - Premium Olivy a Středomořské Lahůdky</title>
-    <meta name="description"
-        content="Objevte Vaše Olivy – rodinný obchod s prémiovými olivami, olivovými oleji, sušeným ovocem a oříšky v Praze.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Vaše Olivy | Řecké olivy, oleje a delikatesy</title>
+  <meta name="description" content="Rodinný obchod s prvotřídními řeckými olivami, olivovými oleji a delikatesami. Autentické chutě Středomoří a Balkánu." />
+
+  <!-- Open Graph (optional, helps when sharing links) -->
+  <meta property="og:title" content="Vaše Olivy" />
+  <meta property="og:description" content="Řecké olivy, olivové oleje a delikatesy." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Prefer system fonts (fast), but you can swap to your brand font later -->
+  <link rel="icon" href="pics/logo.jpg" />
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="pics/logo.jpg" alt="Vaše Olivy Logo" />
+  <a class="skip-link" href="#main">Přeskočit na obsah</a>
+
+  <!-- Announcement bar -->
+  <div class="announcement" role="status" aria-live="polite">
+    <div class="container announcement__inner">
+      <span class="announcement__badge">Info</span>
+      <p class="announcement__text">
+        Vážení zákazníci v týdnu <strong>15.12–21.12.</strong> máme otevřeno denně <strong>10:00–18:00</strong>!
+      </p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Vaše Olivy – na začátek stránky">
+        <img class="brand__logo" src="pics/logo_orisky.png" alt="Logo Vaše Olivy" width="56" height="56" />
+        <span class="brand__text">
+          <span class="brand__name">Vaše Olivy</span>
+          <span class="brand__tagline">poctivé chutě Středomoří</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Otevřít menu">
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Hlavní navigace">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">O nás</a></li>
+          <li><a class="nav__link" href="#products">Produkty</a></li>
+          <li><a class="nav__link" href="#sortiment">Sortiment</a></li>
+          <li><a class="nav__link" href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="top" class="hero" aria-label="Úvod">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1>Vítejte u <span class="nowrap">Vaše Olivy</span></h1>
+          <p class="lead">
+            Řecké olivy, olivové oleje a delikatesy – pečlivě vybírané a poctivé. Ochutnejte autentické chutě
+            Středomoří a Balkánu.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#products">Prohlédnout produkty</a>
+            <a class="btn btn--ghost" href="#contact">Kde nás najdete</a>
+          </div>
+
+          <dl class="hero__facts" aria-label="Rychlé informace">
+            <div class="fact">
+              <dt>Otevírací doba</dt>
+              <dd>Po–Pá 10:00–18:00, So dle sezóny</dd>
+            </div>
+            <div class="fact">
+              <dt>Ochutnávky</dt>
+              <dd>Rádi poradíme a vybereme chuť na míru</dd>
+            </div>
+          </dl>
         </div>
 
-        <!-- Burger for mobile -->
-        <button class="burger" aria-label="Menu" aria-expanded="false" type="button">
-            <span class="burger-box"><span class="burger-inner"></span></span>
-        </button>
+        <div class="hero__media" aria-hidden="true">
+          <img
+            src="pics/interior.jpg"
+            alt=""
+            loading="eager"
+            decoding="async"
+            width="900"
+            height="700"
+          />
+        </div>
+      </div>
+      <div class="zigzag zigzag--accent" id="first-zigzag" aria-hidden="true"></div>
+    </section>
 
-        <nav>
-            <ul>
-                <li><a href="#home" data-en="Home" data-cs="Domů">Domů</a></li>
-                <li><a href="olivy.html" data-en="About Us" data-cs="O nás">Olivy</a></li>
-                <li><a href="vina.html" data-en="Our Products" data-cs="Naše produkty">VÍNA</a></li>
-                <li><a href="syry.html" data-en="Gallery" data-cs="Galerie">Sýry z Bulharska</a></li>
-                <li><a href="coffee.html" data-en="Contact" data-cs="Kontakt">Dabov Coffee</a></li>
+    <!-- About -->
+    <section id="about" class="section section--accent">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2>O nás</h2>
+          <p class="section__subtitle">
+            Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a přírodních produktů.
+          </p>
+        </header>
 
-            </ul>
-        </nav>
-        <button id="lang-toggle" data-lang="cs">EN</button>
-    </header>
+        <div class="prose">
+          <p>
+            Za značkou <strong>Vaše Olivy</strong> stojí malý tým lidí, kteří milují poctivé jídlo.
+            Dovážíme prvotřídní řecké olivy a olivové oleje a sloužíme jako distributor unikátních
+            pikantních specialit značky <strong>Chilli Hills</strong>.
+          </p>
+          <p>
+            Naším cílem je ukázat, že olivy nejsou luxusní potravina – skutečný luxus je v jejich chuti a kvalitě.
+            Věříme, že olivy mohou být chutné, zdravé a dostupné pro každého.
+          </p>
+        </div>
 
-    <main>
-        <section id="home">
-            <div class="banner">
-                <img class="banner-thumb" src="pics/olives_header.jpg" alt="Olivy a olivový olej" />
-                <div class="banner-content">
-                    <h1 data-en="Welcome to Vaše Olivy" data-cs="Vítejte ve Vaše Olivy">Vítejte v Moje Oříšky a Vaše
-                        Olivy
-                    </h1>
-                    <p data-en="Premium olives and Mediterranean delicacies"
-                        data-cs="Prémiové olivy a středomořské lahůdky">Prémiové olivy přímo z Řecka</p>
-                </div>
+        <div class="feature-grid" aria-label="Naše hodnoty">
+          <article class="feature">
+            <h3>Původ & kvalita</h3>
+            <p>Vybrané produkty od prověřených dodavatelů a farem.</p>
+          </article>
+          <article class="feature">
+            <h3>Poctivá chuť</h3>
+            <p>Bez zbytečností – důraz na surovinu, chuť a čerstvost.</p>
+          </article>
+          <article class="feature">
+            <h3>Doporučení na míru</h3>
+            <p>Poradíme s výběrem k vínu, sýru i na vaření.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <div class="zigzag zigzag--accent-flip" aria-hidden="true" id="zigzag-products "></div>
+    <!-- Products -->
+    <section id="products" class="section section--light">
+
+      <div class="container section__inner">
+        <header class="section__header section__header--center">
+          <h2>Naše produkty</h2>
+          <p class="section__subtitle">To nejlepší z Řecka a Balkánu – na každý den i na oslavu.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <img src="pics/green-olives.jpg" alt="Zelené olivy" loading="lazy" decoding="async" />
+            <div class="card__body">
+              <h3>Zelené olivy</h3>
+              <p>Šťavnaté řecké olivy s poctivou chutí.</p>
+              <p class="card__meta"><span class="price">od 120 Kč</span></p>
             </div>
-        </section>
+          </article>
 
-        <section id="products">
-            <h2 data-en="Our Products" data-cs="Naše produkty">Naše produkty</h2>
-            <div class="product-grid">
-                <div class="product">
-                    <a href="olivy.html" class="product-link" aria-label="Olivy — zobrazit produkty">
-                        <img src="pics/olives_black.jpg" alt="Olivy" />
-                        <h3 data-en="Olives" data-cs="Prémiové řecké olivy">Olivy</h3>
-                    </a>
-                </div>
-
-                <div class="product">
-                    <a href="vina.html" class="product-link" aria-label="Vína z Bulharska — zobrazit produkty">
-                        <img src="pics/vines/vine1.avif" alt="Vína z Bulharska" />
-                        <h3 data-en="Vine from Bulgaria" data-cs="Vína z Bulharska">VÍNA Z BULHURSKA</h3>
-                    </a>
-                </div>
-
-                <div class="product">
-                    <a href="coffee.html" class="product-link" aria-label="Dabov Coffee — zobrazit produkty">
-                        <img src="pics/coffee/coffe1.jpg" alt="Dabov Coffee" />
-                        <h3 data-en="Coffee" data-cs="Káva">DABOV COFFEE</h3>
-                    </a>
-                </div>
-
-                <div class="product">
-                    <a href="honey.html" class="product-link" aria-label="Spoon Honey — zobrazit produkty">
-                        <img src="pics/honey/honey1.jpg" alt="Spoon Honey" />
-                        <h3 data-en="Honey" data-cs="Med">SPOON HONEY</h3>
-                    </a>
-                </div>
-
-                <div class="product">
-                    <a href="syry.html" class="product-link" aria-label="Sýry z Bulharska — zobrazit produkty">
-                        <img src="pics/cheese/cheese1.avif" alt="Sýry z Bulharska" />
-                        <h3 data-en="Cheese from Bulgaria" data-cs="Sýry z Bulharska">Sýry z Bulharska</h3>
-                    </a>
-                </div>
+          <article class="card">
+            <img src="pics/black-olives.jpg" alt="Černé olivy" loading="lazy" decoding="async" />
+            <div class="card__body">
+              <h3>Černé olivy</h3>
+              <p>Plná chuť z vyzrálých olivových plodů.</p>
+              <p class="card__meta"><span class="price">od 120 Kč</span></p>
             </div>
-        </section>
+          </article>
 
-        <section id="about">
-            <h2 data-en="About Us" data-cs="O nás">O nás</h2>
-            <p data-en="We are a small family business focused on selling high-quality and natural products. Behind the Vaše Olivy brand is a small team of people who love honest food. We import premium Greek olives and olive oils and serve as a distributor of unique spicy specialties of the Chilli Hills brand. Our goal is to show that olives are not a luxury food - real luxury is in their taste and quality. We believe that olives can be delicious, healthy and affordable for everyone. We bring authentic flavors of the Mediterranean and the Balkans - with an emphasis on origin, quality and real taste."
-                data-cs="Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a            přírodních produktů. Za značkou Vaše Olivy stojí malý tým lidí, kteří milují poctivé    jídlo. Dovážíme prvotřídní řecké olivy a olivové oleje a sloužíme jako distributor unikátních pikantních specialit značky Chilli Hills. Naším cílem je ukázat, že olivy nejsou luxusní potravina – skutečný luxus je v jejich chuti a kvalitě. Věříme, že olivy mohou být chutné, zdravé a dostupné pro každého. Přinášíme autentické chutě Středomoří a Balkánu – s důrazem na původ, kvalitu a opravdovou chuť.">
-                Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a přírodních produktů. Za značkou Vaše
-                Olivy
-                stojí malý tým lidí, kteří milují poctivé jídlo. Dovážíme prvotřídní řecké olivy a olivové oleje a
-                sloužíme
-                jako distributor unikátních pikantních specialit značky Chilli Hills. Naším cílem je ukázat, že olivy
-                nejsou
-                luxusní potravina – skutečný luxus je v jejich chuti a kvalitě. Věříme, že olivy mohou být chutné,
-                zdravé a
-                dostupné pro každého. Přinášíme autentické chutě Středomoří a Balkánu – s důrazem na původ, kvalitu a
-                opravdovou chuť.
+          <article class="card">
+            <img src="pics/olive-oil.jpg" alt="Extra panenský olivový olej" loading="lazy" decoding="async" />
+            <div class="card__body">
+              <h3>Olivové oleje</h3>
+              <p>Za studena lisované oleje prvotřídní kvality.</p>
+              <p class="card__meta"><span class="price">od 220 Kč</span></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="pics/chilli-hills.jpg" alt="Chilli speciality" loading="lazy" decoding="async" />
+            <div class="card__body">
+              <h3>Chilli speciality</h3>
+              <p>Pikantní omáčky a pasty značky Chilli Hills.</p>
+              <p class="card__meta"><span class="price">od 150 Kč</span></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="pics/snacks.jpg" alt="Delikatesy a snacky" loading="lazy" decoding="async" />
+            <div class="card__body">
+              <h3>Delikatesy</h3>
+              <p>Vynikající pochoutky pro každodenní potěšení.</p>
+              <p class="card__meta"><span class="price">od 90 Kč</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+      <div class="zigzag zigzag--accent" aria-hidden="true" id="zigzag-products "></div>
+    <!-- Sortiment (interactive tabs) -->
+    <section id="sortiment" class="section section--accent">
+      <div class="container section__inner">
+        <header class="section__header section__header--center">
+          <h2>Sortiment</h2>
+          <p class="section__subtitle">Klikněte na kategorii a zobrazí se krátký popis.</p>
+        </header>
+
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Kategorie sortimentu">
+            <button class="tabs__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-olivy" id="t-olivy" data-tab="olivy">
+              <span class="tabs__thumb">
+                <img src="pics/olives11.jpg" alt="" loading="lazy" decoding="async" />
+              </span>
+              <span class="tabs__label">Olivy</span>
+            </button>
+
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-vina" id="t-vina" data-tab="vina">
+              <span class="tabs__thumb">
+                <img src="pics/vine1.avif" alt="" loading="lazy" decoding="async" />
+              </span>
+              <span class="tabs__label">Vína</span>
+            </button>
+
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-syry" id="t-syry" data-tab="syry">
+              <span class="tabs__thumb">
+                <img src="pics/cheese1.avif" alt="" loading="lazy" decoding="async" />
+              </span>
+              <span class="tabs__label">Sýry</span>
+            </button>
+
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-darkove" id="t-darkove" data-tab="darkove">
+              <span class="tabs__thumb">
+                <img src="pics/cat-darkove.jpg" alt="" loading="lazy" decoding="async" />
+              </span>
+              <span class="tabs__label">Dárky</span>
+            </button>
+          </div>
+
+          <div class="tabs__panels">
+            <div class="tabs__panel is-active" role="tabpanel" tabindex="0" id="tab-olivy" aria-labelledby="t-olivy" data-panel="olivy">
+              <p>
+                Nabízíme prvotřídní řecké olivy – zelené i černé, v různých marinádách a nálevech.
+                Rádi doporučíme ideální variantu k vínu, sýru nebo na vaření.
+              </p>
+            </div>
+
+            <div class="tabs__panel" role="tabpanel" tabindex="0" id="tab-vina" aria-labelledby="t-vina" data-panel="vina">
+              <p>
+                Vybraná vína, která krásně doplní olivy i delikatesy – od svěžích bílých až po plná červená.
+                Tip: zkuste párování podle intenzity chuti.
+              </p>
+            </div>
+
+            <div class="tabs__panel" role="tabpanel" tabindex="0" id="tab-syry" aria-labelledby="t-syry" data-panel="syry">
+              <p>
+                Výběr kvalitních sýrů z menších producentů. Kravské, kozí i ovčí – od jemných až po výrazné.
+                Skvělé do dárkového balíčku i na domácí degustační prkénko.
+              </p>
+            </div>
+
+            <div class="tabs__panel" role="tabpanel" tabindex="0" id="tab-darkove" aria-labelledby="t-darkove" data-panel="darkove">
+              <p>
+                Připravíme dárkové balíčky na míru – pro rodinu, přátele i firemní klienty.
+                Napište nám a sladíme chutě podle rozpočtu i preferencí.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <div class="zigzag zigzag--accent-flip" aria-hidden="true" id="zigzag-products "></div>
+
+    <!-- Contact -->
+    <section id="contact" class="section section--surface">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2>Kontakt</h2>
+          <p class="section__subtitle">Zastavte se osobně nebo nám zavolejte.</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact__card">
+            <h3>Vaše Olivy</h3>
+            <p class="contact__line"><strong>Telefon:</strong> <a href="tel:+420000000000">+420 608 654 715</a></p>
+            <p class="contact__line"><strong>Email:</strong> <a href="mailto:info@vaseolivy.cz"> mojeorisky@gmail.com</a></p>
+            <p class="contact__line"><strong>Adresa:</strong> 28. pluku 128/12, Prague 10, Czech Republic</p>
+
+            <div class="hours" aria-label="Otevírací doba">
+              <div class="hours__row"><span>Po–Pá</span><span>10:00–18:00</span></div>
+              <div class="hours__row"><span>So</span><span>10:00–14:00</span></div>
+              <div class="hours__row"><span>Ne</span><span>zavřeno</span></div>
+            </div>
+
+            <div class="socials" aria-label="Sociální sítě">
+              <a class="chip" href="#" rel="noopener">Instagram</a>
+              <a class="chip" href="#" rel="noopener">Facebook</a>
+            </div>
+          </div>
+
+          <div class="contact__map" aria-label="Mapa">
+            <div class="map">
+              <!-- TODO: nahraďte adresu ve 'q=' za vaši přesnou adresu -->
+              <iframe
+                title="Mapa – Vaše Olivy"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.123456789012!2d14.456789!3d50.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9b1234567890%3A0x123456789abcdef!2s28.%20pluku%20128%2F12%2C%20Praha%2010%2C%20Czech%20Republic!5e0!3m2!1sen!2scz!4v1234567890123!5m2!1sen!2scz"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p class="map__note">
+              Otevřít v mapách:
+              <a href="https://maps.google.com/?q=Prague" target="_blank" rel="noopener">Google Maps</a>
             </p>
-
-            <!-- added: two logos side-by-side (left / right) -->
-            <div class="about-logos" aria-hidden="false">
-                <img src="pics/logo_orisky.png" alt="Moje Oříšky logo (left)" class="about-logo about-logo-left" />
-                <img src="pics/logo.png" alt="Vaše Olivy logo (right)" class="about-logo about-logo-right" />
-            </div>
-        </section>
-
-        <section id="gallery">
-            <h2 data-en="Gallery" data-cs="Galerie">Galerie</h2>
-            <div class="gallery-grid">
-                <img src="pics/olives15.jpg" alt="Kalamata Blonde" />
-                <img src="pics/olives4.jpg" alt="Kalamata" />
-                <img src="pics/olives2.jpg" alt="Kalamata Extra" />
-                <img src="pics/olives5.jpg" alt="Natural Extra Amfisa" />
-                <img src="pics/rasins2.jpg" alt="Stafida Amfissa" />
-                <img src="pics/olives8.jpg" alt="Zelená Mammoth bez pecek" />
-                <img src="pics/olives 3.jpg" alt="Zlenená Super Mammoth plněná mandlí" />
-                <img src="pics/olives12.jpg" alt="Kalamata bez pecek" />
-                <img src="pics/olives13.jpg" alt="Olivový salát" />
-                <img src="pics/olives11.jpg" alt="Zelené olivy s oreganem a česnekem" />
-                <img src="pics/olives1.jpg" alt="Zelené olivy s chilli" />
-                <img src="pics/olives7.jpg" alt="Černá oliva Mammoth" />
-                <img src="pics/interior.jpg" alt="Interiér" />
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-row">
-            <div class="contact-info">
-                <h2 data-en="Contact" data-cs="Kontakt"></h2>
-                <p><strong data-en="Address:" data-cs="Adresa:">Adresa:</strong> 28. pluku 128/12, Prague 10, Czech
-                    Republic</p>
-                <p><strong data-en="Phone:" data-cs="Telefon:">Telefon:</strong> +420 608 654 715</p>
-                <p><strong data-en="Email:" data-cs="Email:">Email:</strong> mojeorisky@gmail.com</p>
-
-
-            </div>
-
-            <div class="footer-map" aria-hidden="false">
-                <!-- small map on the right side of the footer -->
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.123456789012!2d14.456789!3d50.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9b1234567890%3A0x123456789abcdef!2s28.%20pluku%20128%2F12%2C%20Praha%2010%2C%20Czech%20Republic!5e0!3m2!1sen!2scz!4v1234567890123!5m2!1sen!2scz"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+          </div>
         </div>
-        <div class="separator" style="text-align: center;">
-            <p><strong data-en="Opening Hours:" data-cs="Otevírací doba:">Otevírací doba:</strong></p>
-            <ol style="list-style-type:none;">
-                <li data-en="Monday–Friday: 9:00–18:00" data-cs="Pondělí–Pátek: 9:00–18:00">Pondělí–Pátek: 9:00–18:00
-                </li>
-                <li data-en="Saturday: 10:00–14:00" data-cs="Sobota: 10:00–14:00">Sobota: 10:00–14:00</li>
-            </ol>
-            <div class="social-links">
-                <a href="#" data-en="Facebook" data-cs="Facebook">Facebook</a> |
-                <a href="#" data-en="Instagram" data-cs="Instagram">Instagram</a>
-            </div>
-            <p>&copy; 2023 Moje Oříšky s.r.o. | IČO: 23225254 | DIČ: CZ23225254</p>
-        </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script src="javascript.js"></script>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Vaše Olivy. Všechna práva vyhrazena.</p>
+      <a class="to-top" href="#top">Nahoru ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const header = document.querySelector("[data-header]");
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
+
+    function setNav(open) {
+      toggle.setAttribute("aria-expanded", String(open));
+      header.classList.toggle("is-open", open);
+      document.body.classList.toggle("no-scroll", open);
+    }
+
+    toggle?.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") !== "true";
+      setNav(open);
+    });
+
+    // Close menu when clicking a link (mobile)
+    nav?.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link && toggle.getAttribute("aria-expanded") === "true") setNav(false);
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") setNav(false);
+    });
+
+    // Close menu when clicking outside (mobile)
+    document.addEventListener("click", (e) => {
+      if (toggle.getAttribute("aria-expanded") === "true") {
+        const isClickInsideNav = nav.contains(e.target);
+        const isClickOnToggle = toggle.contains(e.target);
+        if (!isClickInsideNav && !isClickOnToggle) {
+          setNav(false);
+        }
+      }
+    });
+
+    // Tabs (accessible)
+    const tabsRoot = document.querySelector("[data-tabs]");
+    if (tabsRoot) {
+      const tabs = Array.from(tabsRoot.querySelectorAll("[data-tab]"));
+      const panels = Array.from(tabsRoot.querySelectorAll("[data-panel]"));
+
+      function activate(key) {
+        tabs.forEach((t) => {
+          const active = t.dataset.tab === key;
+          t.classList.toggle("is-active", active);
+          t.setAttribute("aria-selected", String(active));
+          t.tabIndex = active ? 0 : -1;
+        });
+        panels.forEach((p) => {
+          const active = p.dataset.panel === key;
+          p.classList.toggle("is-active", active);
+          p.hidden = !active;
+        });
+      }
+
+      // Init: hide inactive panels for screen readers
+      panels.forEach((p) => (p.hidden = !p.classList.contains("is-active")));
+
+      tabs.forEach((t) => {
+        t.addEventListener("click", () => activate(t.dataset.tab));
+        t.addEventListener("keydown", (e) => {
+          const i = tabs.indexOf(t);
+          if (e.key === "ArrowRight") tabs[(i + 1) % tabs.length].focus();
+          if (e.key === "ArrowLeft") tabs[(i - 1 + tabs.length) % tabs.length].focus();
+        });
+      });
+    }
+
+    // Demo form (no backend)
+    const form = document.getElementById("contact-form");
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Děkujeme! Zpráva byla odeslána (demo).");
+      form.reset();
+    });
+  </script>
 </body>
-
 </html>
