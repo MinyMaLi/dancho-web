@@ -25,7 +25,7 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; overscroll-behavior-x: none; }
 
 body{
   margin: 0;
@@ -33,6 +33,7 @@ body{
   color: var(--ink);
   background: var(--bg);
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 img{ max-width: 100%; height: auto; display: block; }
@@ -152,12 +153,22 @@ a:hover{ text-decoration: underline; }
 .nav{
   position: fixed;
   inset: 0;
-  translate: 100% 0;
-  transition: translate .22s ease;
+  transform: translateX(100%);
+  transition: transform .22s ease;
   background: rgba(0,0,0,.45);
   padding: 84px var(--pad) var(--pad);
+  width: 100%;
+  max-width: 100vw;
+  /* prevent nav contents from causing horizontal scroll */
+  overflow-x: hidden;
+  left: 0;
+  right: 0;
+  /* ensure the mobile nav overlays all page content */
+  z-index: 99999;
+  pointer-events: auto;
 }
-.header.is-open .nav{ translate: 0 0; }
+.header.is-open .nav{ transform: translateX(0); }
+
 .no-scroll{ overflow: hidden; }
 
 .nav__list{
@@ -177,16 +188,29 @@ a:hover{ text-decoration: underline; }
 }
 .nav__link:hover{ background: rgba(163, 182, 138, .25); text-decoration: none; }
 
+/* iOS Safari fix: backdrop-filter can break position:fixed children */
+@media (max-width: 899px){
+  .header{
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(249, 239, 216, .95); /* keep the same look */
+  }
+}
+
+
 /* Desktop nav */
 @media (min-width: 900px){
   .nav-toggle{ display: none; }
   .nav{
     position: static;
     inset: auto;
-    translate: 0 0;
+    transform: none;
     transition: none;
     background: transparent;
     padding: 0;
+    width: auto;
+    max-width: none;
+    z-index: auto;
   }
   .nav__list{
     display: flex;
@@ -255,12 +279,6 @@ a:hover{ text-decoration: underline; }
   color: var(--muted);
   max-width: 58ch;
 }
-.hero__cta{
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 18px;
-}
 
 .hero__media{
   border-radius: var(--radius-lg);
@@ -274,20 +292,6 @@ a:hover{ text-decoration: underline; }
   object-fit: cover;
 }
 
-.hero__facts{
-  display: grid;
-  gap: 10px;
-  margin: 20px 0 0;
-  padding: 0;
-}
-.fact{
-  background: rgba(255,255,255,.55);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 12px 14px;
-}
-.fact dt{ font-weight: 800; }
-.fact dd{ margin: 4px 0 0; color: var(--muted); }
 
 @media (min-width: 900px){
   .hero{ padding-top: 34px; }
@@ -297,9 +301,7 @@ a:hover{ text-decoration: underline; }
     gap: 34px;
     padding-bottom: 26px;
   }
-  .hero__facts{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  
 }
 
 /* Zigzag separators */
@@ -351,25 +353,7 @@ a:hover{ text-decoration: underline; }
 .prose{ max-width: 70ch; }
 .prose p{ margin: 0 0 12px; }
 
-/* Feature grid */
-.feature-grid{
-  display: grid;
-  gap: 14px;
-  margin-top: 10px;
-}
-.feature{
-  background: rgba(255,255,255,.55);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 16px 16px;
-  box-shadow: 0 10px 22px rgba(0,0,0,.06);
-}
-.feature h3{ margin: 0 0 6px; }
-.feature p{ margin: 0; color: var(--muted); }
 
-@media (min-width: 800px){
-  .feature-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
 
 /* Cards */
 .cards{
