@@ -9,14 +9,11 @@
   <meta name="description"
     content="Rodinný obchod s prvotřídními řeckými olivami, olivovými oleji a delikatesami. Autentické chutě Středomoří a Balkánu." />
 
-  <!-- Open Graph (optional, helps when sharing links) -->
   <meta property="og:title" content="Vaše Olivy" />
   <meta property="og:description" content="Řecké olivy, olivové oleje a delikatesy." />
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Prefer system fonts (fast), but you can swap to your brand font later -->
   <link rel="icon" href="pics/logo.jpg" />
 </head>
 
@@ -76,83 +73,94 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="section section--accent">
-      <div class="container section__inner">
-        <header class="section__header">
-          <h2>O nás</h2>
-          <p class="section__subtitle">
-            Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a přírodních produktů.
-          </p>
-        </header>
+   <section id="about" class="section section--accent">
+  <div class="container section__inner">
+    <header class="section__header">
+      <h2>O nás</h2>
+      <p class="section__subtitle">
+        Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a přírodních produktů.
+      </p>
+    </header>
 
-        <div class="prose">
-          <p>
-            Za <strong>Oříšky a Vaše Olivy</strong>  stojí malý tým lidí, kteří mají opravdovou vášeň pro kvalitní potraviny a
-            poctivé chutě.
-          </p>
-          <p>
-            Dovážíme olivy a olivový olej nejvyšší kvality přímo z Řecka, od pečlivě vybraných výrobců, u kterých je
-            kvalita vždy na prvním místě.
-            Jako první na trhu v České republice dovážíme také sýry a mléčné výrobky značky Sakarela, která si už
-            získala srdce všech, kdo měli možnost ochutnat jejich výjimečné produkty.
-          </p>
-        </div>
-      </div>
-    </section>
+    <div class="prose">
+      <p>
+        Za <strong>Oříšky a Vaše Olivy</strong> stojí malý tým lidí, kteří mají opravdovou vášeň pro kvalitní potraviny
+        a poctivé chutě.
+      </p>
+
+      <p>
+        Dovážíme <strong>olivy a olivový olej nejvyšší kvality</strong> přímo z <strong>Řecka</strong>, od pečlivě vybraných
+        výrobců, u kterých je <strong>kvalita vždy na prvním místě</strong>.
+      </p>
+
+      <p>
+        Jako první na trhu v <strong>České republice</strong> dovážíme také <strong>sýry a mléčné výrobky</strong> značky
+        <strong>Sakarela</strong>, která si už získala srdce všech, kdo měli možnost ochutnat jejich výjimečné produkty.
+      </p>
+    </div>
+  </div>
+</section>
+
     <!-- Products -->
     <section id="products" class="section section--light">
-
       <div class="container section__inner">
         <header class="section__header section__header--center">
-          <h2>Naše produkty</h2>
-          <p class="section__subtitle">To nejlepší z Řecka a Balkánu – na každý den i na oslavu.</p>
+          <h2>Produkty</h2>
+          <p class="section__subtitle">Klikněte na kategorii a zobrazí se konkrétní produkty.</p>
         </header>
 
-        <div class="cards">
-          <article class="card">
-            <img src="pics/green-olives.jpg" alt="Zelené olivy" loading="lazy" decoding="async" />
-            <div class="card__body">
-              <h3>Olivy</h3>
-              <p>Šťavnaté řecké olivy s poctivou chutí.</p>
-              <p class="card__meta"><span class="price">od 120 Kč</span></p>
-            </div>
-          </article>
+        <!-- Category chooser -->
+        <div class="product-cats" role="tablist" aria-label="Kategorie produktů" id="productTabs">
+          <button class="product-cat is-active" type="button" role="tab" aria-selected="true"
+            data-category="olives" aria-controls="productPanel" id="tab-olives">
+            <span class="product-cat__img">
+              <img src="/pics/olives_product.jpeg" alt="Olivy" loading="lazy" decoding="async" />
+            </span>
+            <span class="product-cat__label">Olivy</span>
+          </button>
 
-          <article class="card">
-            <img src="pics/black-olives.jpg" alt="Černé olivy" loading="lazy" decoding="async" />
-            <div class="card__body">
-              <h3>Mléčné výrobky </h3>
-              <p>Plná chuť z vyzrálých olivových plodů.</p>
-              <p class="card__meta"><span class="price">od 120 Kč</span></p>
-            </div>
-          </article>
+          <button class="product-cat" type="button" role="tab" aria-selected="false"
+            data-category="cheese" aria-controls="productPanel" id="tab-cheese">
+            <span class="product-cat__img">
+              <img src="/pics/cheese_product.jpeg" alt="Sýry a mléčné výrobky" loading="lazy" decoding="async" />
+            </span>
+            <span class="product-cat__label">Sýry</span>
+          </button>
 
-          <article class="card">
-            <img src="pics/olive-oil.jpg" alt="Extra panenský olivový olej" loading="lazy" decoding="async" />
-            <div class="card__body">
-              <h3>Olivové oleje</h3>
-              <p>Za studena lisované oleje prvotřídní kvality.</p>
-              <p class="card__meta"><span class="price">od 220 Kč</span></p>
-            </div>
-          </article>
+          <button class="product-cat" type="button" role="tab" aria-selected="false"
+            data-category="wine" aria-controls="productPanel" id="tab-wine">
+            <span class="product-cat__img">
+              <img src="/pics/wine_product.avif" alt="Víno" loading="lazy" decoding="async" />
+            </span>
+            <span class="product-cat__label">Víno</span>
+          </button>
 
-          <article class="card">
-            <img src="pics/chilli-hills.jpg" alt="Chilli speciality" loading="lazy" decoding="async" />
-            <div class="card__body">
-              <h3>Chilli speciality</h3>
-              <p>Pikantní omáčky a pasty značky Chilli Hills.</p>
-              <p class="card__meta"><span class="price">od 150 Kč</span></p>
-            </div>
-          </article>
+          <button class="product-cat" type="button" role="tab" aria-selected="false"
+            data-category="coffee" aria-controls="productPanel" id="tab-coffee">
+            <span class="product-cat__img">
+              <!-- dočasný obrázek (nahraďte kávou) -->
+              <img src="/pics/coffe_product.jpg" alt="Káva" loading="lazy" decoding="async" />
+            </span>
+            <span class="product-cat__label">Káva</span>
+          </button>
 
-          <article class="card">
-            <img src="pics/snacks.jpg" alt="Delikatesy a snacky" loading="lazy" decoding="async" />
-            <div class="card__body">
-              <h3>Delikatesy</h3>
-              <p>Vynikající pochoutky pro každodenní potěšení.</p>
-              <p class="card__meta"><span class="price">od 90 Kč</span></p>
-            </div>
-          </article>
+          <button class="product-cat" type="button" role="tab" aria-selected="false"
+            data-category="chilli" aria-controls="productPanel" id="tab-chilli">
+            <span class="product-cat__img">
+              <img src="/pics/honey_product.jpg" alt="Chilli speciality" loading="lazy" decoding="async" />
+            </span>
+            <span class="product-cat__label">Chilli</span>
+          </button>
+        </div>
+
+        <!-- Products panel -->
+        <div class="product-panel" id="productPanel" role="tabpanel" aria-labelledby="tab-olives">
+          <div class="product-panel__head">
+            <h3 class="product-panel__title" id="productTitle">Olivy</h3>
+            <p class="product-panel__subtitle" id="productSubtitle">Vybrané olivy z Řecka a Balkánu (demo produkty).</p>
+          </div>
+
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
         </div>
       </div>
     </section>
@@ -169,8 +177,7 @@
           <div class="contact__card">
             <h3>Vaše Olivy</h3>
             <p class="contact__line"><strong>Telefon:</strong> <a href="tel:+420000000000">+420 608 654 715</a></p>
-            <p class="contact__line"><strong>Email:</strong> <a href="mailto:info@vaseolivy.cz">
-                mojeorisky@gmail.com</a></p>
+            <p class="contact__line"><strong>Email:</strong> <a href="mailto:info@vaseolivy.cz">mojeorisky@gmail.com</a></p>
             <p class="contact__line"><strong>Adresa:</strong> 28. pluku 128/12, Prague 10, Czech Republic</p>
 
             <div class="hours" aria-label="Otevírací doba">
@@ -187,7 +194,6 @@
 
           <div class="contact__map" aria-label="Mapa">
             <div class="map">
-              <!-- TODO: nahraďte adresu ve 'q=' za vaši přesnou adresu -->
               <iframe title="Mapa – Vaše Olivy" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.123456789012!2d14.456789!3d50.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9b1234567890%3A0x123456789abcdef!2s28.%20pluku%20128%2F12%2C%20Praha%2010%2C%20Czech%20Republic!5e0!3m2!1sen!2scz!4v1234567890123!5m2!1sen!2scz"
                 allowfullscreen></iframe>
@@ -229,76 +235,171 @@
       setNav(open);
     });
 
-    // Close menu when clicking a link (mobile)
     nav?.addEventListener("click", (e) => {
       const link = e.target.closest("a");
       if (link && toggle.getAttribute("aria-expanded") === "true") setNav(false);
     });
 
-    // Close on Escape
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") setNav(false);
     });
 
-    // Close menu when clicking outside (mobile)
     document.addEventListener("click", (e) => {
       if (toggle.getAttribute("aria-expanded") === "true") {
         const isClickInsideNav = nav.contains(e.target);
         const isClickOnToggle = toggle.contains(e.target);
-        if (!isClickInsideNav && !isClickOnToggle) {
-          setNav(false);
-        }
+        if (!isClickInsideNav && !isClickOnToggle) setNav(false);
       }
     });
 
-    // Close menu when clicking on overlay (outside menu panel)
-    nav?.addEventListener("click", (e) => {
-      if (e.target === nav) {
-        setNav(false);
+    // ===== Products (categories -> products swap) =====
+    const productData = {
+      olives: {
+        title: "Olivy",
+        subtitle: "Vybrané olivy z Řecka a Balkánu (demo produkty).",
+        items: [
+          { name: "Kalamata Premium", desc: "Masité olivy, ideální k vínu.", price: "od 120 Kč" },
+          { name: "Zelené plněné mandlemi", desc: "Jemně slané a křupavé.", price: "od 135 Kč" },
+          { name: "Mix oliv s bylinkami", desc: "Středomořská směs, skvělá na stůl.", price: "od 140 Kč" },
+          { name: "Olivy s citronem", desc: "Svěží chuť do salátů i k rybám.", price: "od 130 Kč" },
+          { name: "Sušené olivy", desc: "Intenzivní chuť, perfektní do těstovin.", price: "od 150 Kč" },
+        ]
+      },
+      cheese: {
+        title: "Sýry",
+        subtitle: "Řecké a balkánské sýry (demo produkty).",
+        items: [
+          { name: "Feta blok", desc: "Klasika do salátu i na pečení.", price: "od 95 Kč" },
+          { name: "Halloumi", desc: "Perfektní na gril / pánev.", price: "od 110 Kč" },
+          { name: "Kozí sýr", desc: "Jemný, krémový a voňavý.", price: "od 125 Kč" },
+          { name: "Balkánský sýr", desc: "Slanější varianta, výborná do pomazánek.", price: "od 90 Kč" },
+          { name: "Sýrová pomazánka", desc: "Rychlá večeře nebo na chlebíčky.", price: "od 75 Kč" },
+        ]
+      },
+      wine: {
+        title: "Víno",
+        subtitle: "Víno k delikatesám (demo produkty).",
+        items: [
+          { name: "Bílé suché", desc: "Lehké a minerální.", price: "od 220 Kč" },
+          { name: "Červené polosuché", desc: "Plnější chuť, vhodné k sýrům.", price: "od 260 Kč" },
+          { name: "Retsina", desc: "Tradiční řecký styl.", price: "od 240 Kč" },
+          { name: "Růžové", desc: "Osvěžující na léto.", price: "od 230 Kč" },
+          { name: "Dárkové balení", desc: "Víno + delikatesy.", price: "od 490 Kč" },
+        ]
+      },
+      coffee: {
+        title: "Káva",
+        subtitle: "Zrnková i mletá (demo produkty).",
+        items: [
+          { name: "Espresso blend", desc: "Čokoládové tóny, bohatá crema.", price: "od 190 Kč" },
+          { name: "Single origin", desc: "Ovocnější profil, filtrovaná káva.", price: "od 240 Kč" },
+          { name: "Decaf", desc: "Bez kofeinu, ale s chutí.", price: "od 210 Kč" },
+          { name: "Mletá pro moka", desc: "Ideální do moka konvičky.", price: "od 180 Kč" },
+          { name: "Dárkový set", desc: "Káva + malá delikatesa.", price: "od 390 Kč" },
+        ]
+      },
+      chilli: {
+        title: "Chilli",
+        subtitle: "Omáčky, pasty a koření (demo produkty).",
+        items: [
+          { name: "Habanero omáčka", desc: "Pálivá, ale chuťově bohatá.", price: "od 150 Kč" },
+          { name: "Smoked paprika", desc: "Uzená paprika na maso i zeleninu.", price: "od 120 Kč" },
+          { name: "Jalapeño pasta", desc: "Skvělá do burgerů a dipů.", price: "od 135 Kč" },
+          { name: "Piri piri mix", desc: "Koření na kuře i hranolky.", price: "od 110 Kč" },
+          { name: "Cayenne", desc: "Klasika do polévek a omáček.", price: "od 95 Kč" },
+        ]
       }
-    });
+    };
 
+    const tabRoot = document.getElementById("productTabs");
+    const tabButtons = tabRoot ? Array.from(tabRoot.querySelectorAll(".product-cat")) : [];
+    const productTitle = document.getElementById("productTitle");
+    const productSubtitle = document.getElementById("productSubtitle");
+    const productGrid = document.getElementById("productGrid");
+    const productPanel = document.getElementById("productPanel");
 
-    // Tabs (accessible)
-    const tabsRoot = document.querySelector("[data-tabs]");
-    if (tabsRoot) {
-      const tabs = Array.from(tabsRoot.querySelectorAll("[data-tab]"));
-      const panels = Array.from(tabsRoot.querySelectorAll("[data-panel]"));
+    function renderProducts(categoryKey) {
+      const data = productData[categoryKey];
+      if (!data) return;
 
-      function activate(key) {
-        tabs.forEach((t) => {
-          const active = t.dataset.tab === key;
-          t.classList.toggle("is-active", active);
-          t.setAttribute("aria-selected", String(active));
-          t.tabIndex = active ? 0 : -1;
-        });
-        panels.forEach((p) => {
-          const active = p.dataset.panel === key;
-          p.classList.toggle("is-active", active);
-          p.hidden = !active;
-        });
-      }
+      // panel title + aria
+      productTitle.textContent = data.title;
+      productSubtitle.textContent = data.subtitle;
 
-      // Init: hide inactive panels for screen readers
-      panels.forEach((p) => (p.hidden = !p.classList.contains("is-active")));
+      // Fade swap
+      productGrid.classList.remove("is-visible");
+      productGrid.classList.add("is-swapping");
 
-      tabs.forEach((t) => {
-        t.addEventListener("click", () => activate(t.dataset.tab));
-        t.addEventListener("keydown", (e) => {
-          const i = tabs.indexOf(t);
-          if (e.key === "ArrowRight") tabs[(i + 1) % tabs.length].focus();
-          if (e.key === "ArrowLeft") tabs[(i - 1 + tabs.length) % tabs.length].focus();
-        });
-      });
+      // Render after a tiny delay for smoothness
+      window.setTimeout(() => {
+        productGrid.innerHTML = data.items.map(item => `
+          <article class="product-card">
+            <div class="product-card__body">
+              <h4 class="product-card__title">${item.name}</h4>
+              <p class="product-card__desc">${item.desc}</p>
+              <p class="product-card__meta"><span class="price">${item.price}</span></p>
+            </div>
+          </article>
+        `).join("");
+
+        productGrid.classList.remove("is-swapping");
+        productGrid.classList.add("is-visible");
+      }, 120);
     }
 
-    // Demo form (no backend)
-    const form = document.getElementById("contact-form");
-    form?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Děkujeme! Zpráva byla odeslána (demo).");
-      form.reset();
+    function setActiveTab(btn) {
+      const key = btn.dataset.category;
+
+      tabButtons.forEach(b => {
+        const active = b === btn;
+        b.classList.toggle("is-active", active);
+        b.setAttribute("aria-selected", String(active));
+        b.tabIndex = active ? 0 : -1;
+      });
+
+      // Connect panel label to active tab
+      if (productPanel && btn.id) {
+        productPanel.setAttribute("aria-labelledby", btn.id);
+      }
+
+      renderProducts(key);
+    }
+
+    tabButtons.forEach((btn, idx) => {
+      btn.addEventListener("click", () => setActiveTab(btn));
+
+      // keyboard nav (left/right, home/end)
+      btn.addEventListener("keydown", (e) => {
+        const i = tabButtons.indexOf(btn);
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          tabButtons[(i + 1) % tabButtons.length].focus();
+        }
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          tabButtons[(i - 1 + tabButtons.length) % tabButtons.length].focus();
+        }
+        if (e.key === "Home") {
+          e.preventDefault();
+          tabButtons[0].focus();
+        }
+        if (e.key === "End") {
+          e.preventDefault();
+          tabButtons[tabButtons.length - 1].focus();
+        }
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setActiveTab(btn);
+        }
+      });
+
+      // init tabindex
+      btn.tabIndex = idx === 0 ? 0 : -1;
     });
+
+    // Initial render
+    renderProducts("olives");
+    productGrid.classList.add("is-visible");
   </script>
 </body>
 
