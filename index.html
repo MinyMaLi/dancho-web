@@ -1,28 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="cs">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="light" name="color-scheme" />
   <title>Vaše Oříšky | Řecké olivy, oleje a delikatesy</title>
-  <meta name="description"
-    content="Rodinný obchod s prvotřídními řeckými olivami, olivovými oleji a delikatesami. Autentické chutě Středomoří a Balkánu." />
-
-  <meta property="og:title" content="Vaše Olivy" />
-  <meta property="og:description" content="Řecké olivy, olivové oleje a delikatesy." />
-  <meta property="og:type" content="website" />
-
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="pics/logo.jpg" />
-  <link rel="canonical" href="index.html" />
+  <meta
+    content="Rodinný obchod s prvotřídními řeckými olivami, olivovými oleji a delikatesami. Autentické chutě Středomoří a Balkánu."
+    name="description" />
+  <meta content="Vaše Olivy" property="og:title" />
+  <meta content="Řecké olivy, olivové oleje a delikatesy." property="og:description" />
+  <meta content="website" property="og:type" />
+  <link href="styles.css" rel="stylesheet" />
+  <link href="pics/logo.jpg" rel="icon" />
+  <link href="index.html" rel="canonical" />
 </head>
 
 <body>
   <a class="skip-link" href="#main">Přeskočit na obsah</a>
-
   <!-- Announcement bar -->
-  <div class="announcement" role="status" aria-live="polite">
+  <div aria-live="polite" class="announcement" role="status">
     <div class="container announcement__inner">
       <span class="announcement__badge">Info</span>i
       <p class="announcement__text">
@@ -30,22 +29,19 @@
       </p>
     </div>
   </div>
-
   <!-- Header -->
-  <header class="header" data-header>
+  <header class="header" data-header="">
     <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Vaše Olivy – na začátek stránky">
-        <img class="brand__logo" src="pics/logo_orisky.png" alt="Logo Vaše Olivy" width="56" height="56" />
+      <a aria-label="Vaše Olivy – na začátek stránky" class="brand" href="#top">
+        <img alt="Logo Vaše Olivy" class="brand__logo" height="56" src="pics/logo_orisky.png" width="56" />
         <span class="brand__text">
-          <span class="brand__name">Vítejte ve Moje Oříšky a Vaše Olivy</span>
+          <span class="brand__name">Vítejte v Moje Oříšky a Vaše Olivy</span>
         </span>
       </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Otevřít menu">
-        <span class="nav-toggle__icon" aria-hidden="true"></span>
+      <button aria-controls="site-nav" aria-expanded="false" aria-label="Otevřít menu" class="nav-toggle" type="button">
+        <span aria-hidden="true" class="nav-toggle__icon"></span>
       </button>
-
-      <nav class="nav" id="site-nav" aria-label="Hlavní navigace">
+      <nav aria-label="Hlavní navigace" class="nav" id="site-nav">
         <ul class="nav__list">
           <li><a class="nav__link" href="#about">O nás</a></li>
           <li><a class="nav__link" href="#products">Produkty</a></li>
@@ -54,10 +50,9 @@
       </nav>
     </div>
   </header>
-
   <main id="main">
     <!-- Hero -->
-    <section id="top" class="hero" aria-label="Úvod">
+    <section aria-label="Úvod" class="hero" id="top">
       <div class="container hero__inner">
         <div class="hero__content">
           <h1>Vítejte u <span class="nowrap">Vaše Olivy</span></h1>
@@ -66,142 +61,113 @@
             Středomoří a Balkánu.
           </p>
         </div>
-
-        <div class="hero__media" aria-hidden="true">
-          <img src="pics/interior.jpg" alt="" loading="eager" decoding="async" width="900" height="700" />
+        <div aria-hidden="true" class="hero__media">
+          <img alt="" decoding="async" height="700" loading="eager" src="pics/interior.jpg" width="900" />
         </div>
       </div>
     </section>
-
     <!-- About -->
-   <section id="about" class="section section--accent">
-  <div class="container section__inner">
-    <header class="section__header">
-      <h2>O nás</h2>
-      <p class="section__subtitle">
-        Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a přírodních produktů.
-      </p>
-    </header>
-
-    <div class="prose">
-      <p>
-        Za <strong>Oříšky a Vaše Olivy</strong> stojí malý tým lidí, kteří mají opravdovou vášeň pro kvalitní potraviny
-        a poctivé chutě.
-      </p>
-
-      <p>
-        Dovážíme <strong>olivy a olivový olej nejvyšší kvality</strong> přímo z <strong>Řecka</strong>, od pečlivě vybraných
-        výrobců, u kterých je <strong>kvalita vždy na prvním místě</strong>.
-      </p>
-
-      <p>
-        Jako první na trhu v <strong>České republice</strong> dovážíme také <strong>sýry a mléčné výrobky</strong> značky
-        <strong>Sakarela</strong>, která si už získala srdce všech, kdo měli možnost ochutnat jejich výjimečné produkty.
-      </p>
-    </div>
-  </div>
-</section>
-
+    <section class="section section--accent" id="about">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2>O nás</h2>
+          <p class="section__subtitle">
+            Jsme malá rodinná firma zaměřená na prodej vysoce kvalitních a přírodních produktů.
+          </p>
+        </header>
+        <div class="prose">
+          <p>
+            Za <strong>Oříšky a Vaše Olivy</strong> stojí malý tým lidí, kteří mají opravdovou vášeň pro kvalitní
+            potraviny
+            a poctivé chutě.
+          </p>
+          <p>
+            Dovážíme <strong>olivy a olivový olej nejvyšší kvality</strong> přímo z <strong>Řecka</strong>, od pečlivě
+            vybraných
+            výrobců, u kterých je <strong>kvalita vždy na prvním místě</strong>.
+          </p>
+          <p>
+            Jako první na trhu v <strong>České republice</strong> dovážíme také <strong>sýry a mléčné výrobky</strong>
+            značky
+            <strong>Sakarela</strong>, která si už získala srdce všech, kdo měli možnost ochutnat jejich výjimečné
+            produkty.
+          </p>
+        </div>
+      </div>
+    </section>
     <!-- Products -->
-    <section id="products" class="section section--light">
+    <section class="section section--light" id="products">
       <div class="container section__inner">
         <header class="section__header section__header--center">
           <h2>Produkty</h2>
-          <p class="section__subtitle">Vyberte kategorii a prohlédněte si produkty.</p>
+          <p class="section__subtitle">Vyberte kategorii a prohlédněte si naši nabídku.</p>
         </header>
-
         <!-- Category links -->
-        <div class="product-cats" aria-label="Kategorie produktů">
-          <a class="product-cat" href="olivy.html">
-            <span class="product-cat__img">
-              <img src="/pics/olives_product.jpeg" alt="Olivy" loading="lazy" decoding="async" />
-            </span>
-            <span class="product-cat__label">Olivy</span>
-          </a>
-
-          <a class="product-cat" href="syry.html">
-            <span class="product-cat__img">
-              <img src="/pics/cheese_product.jpeg" alt="Sýry a mléčné výrobky" loading="lazy" decoding="async" />
-            </span>
-            <span class="product-cat__label">Sýry</span>
-          </a>
-
-          <a class="product-cat" href="vino.html">
-            <span class="product-cat__img">
-              <img src="/pics/wine_product.avif" alt="Víno" loading="lazy" decoding="async" />
-            </span>
-            <span class="product-cat__label">Víno</span>
-          </a>
-
-          <a class="product-cat" href="kava.html">
-            <span class="product-cat__img">
-              <!-- dočasný obrázek (nahraďte kávou) -->
-              <img src="/pics/coffe_product.jpg" alt="Káva" loading="lazy" decoding="async" />
-            </span>
-            <span class="product-cat__label">Káva</span>
-          </a>
-
-          <a class="product-cat" href="med.html">
-            <span class="product-cat__img">
-              <img src="/pics/honey_product.jpg" alt="Med" loading="lazy" decoding="async" />
-            </span>
-            <span class="product-cat__label">Med</span>
-          </a>
-        </div>
+        <div aria-label="Kategorie produktů" class="product-cats"><a class="product-cat" href="olivy.html"><span
+              class="product-cat__img"><img alt="Olivy" decoding="async" loading="lazy"
+                src="pics/olivy_products.jpeg" /></span><span class="product-cat__label">Olivy</span></a><a
+            class="product-cat" href="syry.html"><span class="product-cat__img"><img alt="Sýry" decoding="async"
+                loading="lazy" src="pics/cheese_product.jpeg" /></span><span
+              class="product-cat__label">Sýry</span></a><a class="product-cat" href="vino.html"><span
+              class="product-cat__img"><img alt="Víno" decoding="async" loading="lazy"
+                src="pics/vine_product.jpeg" /></span><span class="product-cat__label">Víno</span></a><a
+            class="product-cat" href="olivovy-olej.html"><span class="product-cat__img"><img alt="Olivový olej"
+                decoding="async" loading="lazy" src="pics/olive_oil_product.jpeg" /></span><span
+              class="product-cat__label">Olivový olej</span></a><a class="product-cat" href="chilli-hills.html"><span
+              class="product-cat__img"><img alt="Chilli Hills" decoding="async" loading="lazy"
+                src="pics/chilli_product.jpeg" /></span><span class="product-cat__label">Chilli Hills</span></a><a
+            class="product-cat" href="nuts-orisky.html"><span class="product-cat__img"><img alt="Nuts / Oříšky"
+                decoding="async" loading="lazy" src="pics/nuts_product.jpeg" /></span><span
+              class="product-cat__label">Nuts / Oříšky</span></a></div>
       </div>
     </section>
-
     <!-- Contact -->
-    <section id="contact" class="section section--accent">
+    <section class="section section--accent" id="contact">
       <div class="container section__inner">
         <header class="section__header">
           <h2>Kontakt</h2>
           <p class="section__subtitle">Zastavte se osobně nebo nám zavolejte.</p>
         </header>
-
         <div class="contact">
           <div class="contact__card">
             <h3>Vaše Olivy</h3>
             <p class="contact__line"><strong>Telefon:</strong> <a href="tel:+420000000000">+420 608 654 715</a></p>
-            <p class="contact__line"><strong>Email:</strong> <a href="mailto:info@vaseolivy.cz">mojeorisky@gmail.com</a></p>
+            <p class="contact__line"><strong>Email:</strong> <a href="mailto:info@vaseolivy.cz">mojeorisky@gmail.com</a>
+            </p>
             <p class="contact__line"><strong>Adresa:</strong> 28. pluku 128/12, Prague 10, Czech Republic</p>
-
-            <div class="hours" aria-label="Otevírací doba">
+            <div aria-label="Otevírací doba" class="hours">
               <div class="hours__row"><span>Po–Pá</span><span>10:00–18:00</span></div>
               <div class="hours__row"><span>So</span><span>10:00–14:00</span></div>
               <div class="hours__row"><span>Ne</span><span>zavřeno</span></div>
             </div>
-
-            <div class="socials" aria-label="Sociální sítě">
-              <a class="chip" href="#" rel="noopener">Instagram</a>
-              <a class="chip" href="#" rel="noopener">Facebook</a>
+            <div aria-label="Sociální sítě" class="socials">
+              <a class="chip" href="https://www.instagram.com/mojeorisky?utm_source=qr&igsh=em5xcjgzNnRnenk4" rel="noopener">Instagram</a>
+              <a class="chip" href="https://www.facebook.com/share/1EAzi9FoB4/" rel="noopener">Facebook</a>
+              <a class="chip" href="http://tiktok.com/@mojeorisky" rel="noopener">Tik Tok</a>
             </div>
           </div>
-
-          <div class="contact__map" aria-label="Mapa">
+          <div aria-label="Mapa" class="contact__map">
             <div class="map">
-              <iframe title="Mapa – Vaše Olivy" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              <iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.123456789012!2d14.456789!3d50.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9b1234567890%3A0x123456789abcdef!2s28.%20pluku%20128%2F12%2C%20Praha%2010%2C%20Czech%20Republic!5e0!3m2!1sen!2scz!4v1234567890123!5m2!1sen!2scz"
-                allowfullscreen></iframe>
+                title="Mapa – Vaše Olivy"></iframe>
             </div>
             <p class="map__note">
               Otevřít v mapách:
-              <a href="https://maps.google.com/?q=Prague" target="_blank" rel="noopener">Google Maps</a>
+              <a href="https://maps.google.com/?q=Prague" rel="noopener" target="_blank">Google Maps</a>
             </p>
           </div>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="container footer__inner">
       <p>© <span id="year"></span> Vaše Olivy. Všechna práva vyhrazena.</p>
       <a class="to-top" href="#top">Nahoru ↑</a>
     </div>
   </footer>
-
-  <script src="script.js" defer></script>
+  <script defer="" src="script.js"></script>
 </body>
 
 </html>

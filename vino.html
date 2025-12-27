@@ -1,217 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="cs">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light" />
-  <title>Víno | Vaše Olivy</title>
-  <meta name="description" content="Víno k delikatesám – bílé, červené i růžové. Skvělé kombinace k sýrům a olivám." />
-
-  <meta property="og:title" content="Víno | Vaše Olivy" />
-  <meta property="og:description" content="Víno k delikatesám – bílé, červené i růžové. Skvělé kombinace k sýrům a olivám." />
-  <meta property="og:type" content="website" />
-
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="pics/logo.jpg" />
-  <link rel="canonical" href="vino.html" />
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<title>Víno | Vaše Olivy</title>
+<meta content="Víno k olivám a sýrům – červené, bílé i růžové. Doporučíme ideální láhev podle chuti." name="description"/>
+<meta content="Víno | Vaše Olivy" property="og:title"/>
+<meta content="Víno k olivám a sýrům – červené, bílé i růžové. Doporučíme ideální láhev podle chuti." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="styles.css" rel="stylesheet"/>
+<link href="pics/logo.jpg" rel="icon"/>
+<link href="https://example.com/vino.html" rel="canonical"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Víno – produkty",
+  "itemListElement": [
     {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Víno",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "Product",
-            "name": "Bílé suché",
-            "description": "Lehké a minerální – ideální k olivám.",
-            "offers": { "@type": "Offer", "priceCurrency": "CZK", "price": "220", "availability": "https://schema.org/InStoreOnly" }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "Product",
-            "name": "Červené polosuché",
-            "description": "Plnější chuť, vhodné k sýrům.",
-            "offers": { "@type": "Offer", "priceCurrency": "CZK", "price": "260", "availability": "https://schema.org/InStoreOnly" }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@type": "Product",
-            "name": "Retsina",
-            "description": "Tradiční řecký styl – skvělý zážitek pro zvědavé chutě.",
-            "offers": { "@type": "Offer", "priceCurrency": "CZK", "price": "240", "availability": "https://schema.org/InStoreOnly" }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "item": {
-            "@type": "Product",
-            "name": "Růžové",
-            "description": "Osvěžující na léto – k lehkým delikatesám.",
-            "offers": { "@type": "Offer", "priceCurrency": "CZK", "price": "230", "availability": "https://schema.org/InStoreOnly" }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "Product",
-            "name": "Dárkové balení",
-            "description": "Víno + delikatesy – ideální jako dárek.",
-            "offers": { "@type": "Offer", "priceCurrency": "CZK", "price": "490", "availability": "https://schema.org/InStoreOnly" }
-          }
-        }
-      ]
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Bílé víno – svěží styl"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Červené víno – plnější styl"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rosé – letní volba"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Doporučení k prkénku"
     }
-  </script>
+  ]
+}</script>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Přeskočit na obsah</a>
-
-  <div class="announcement" role="status" aria-live="polite">
-    <div class="container announcement__inner">
-      <span class="announcement__badge">Info</span>
-      <p class="announcement__text">
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+<div aria-live="polite" class="announcement" role="status">
+<div class="container announcement__inner">
+<span class="announcement__badge">Info</span>
+<p class="announcement__text">
         Vážení zákazníci v týdnu <strong>15.12–21.12.</strong> máme otevřeno denně <strong>10:00–18:00</strong>!
       </p>
-    </div>
-  </div>
-
-  <header class="header" data-header>
-    <div class="container header__inner">
-      <a class="brand" href="index.html#top" aria-label="Vaše Olivy – na začátek stránky">
-        <img class="brand__logo" src="pics/logo_orisky.png" alt="Logo Vaše Olivy" width="56" height="56" />
-        <span class="brand__text">
-          <span class="brand__name">Vítejte ve Moje Oříšky a Vaše Olivy</span>
-        </span>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Otevřít menu">
-        <span class="nav-toggle__icon" aria-hidden="true"></span>
-      </button>
-
-      <nav class="nav" id="site-nav" aria-label="Hlavní navigace">
-        <ul class="nav__list">
-          <li><a class="nav__link" href="index.html#about">O nás</a></li>
-          <li><a class="nav__link" href="index.html#products">Produkty</a></li>
-          <li><a class="nav__link" href="index.html#contact">Kontakt</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="product-hero" aria-label="Víno">
-      <div class="container product-hero__inner">
-        <nav class="breadcrumbs" aria-label="Drobečková navigace">
-          <a href="index.html">Domů</a>
-          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
-          <a href="index.html#products">Produkty</a>
-          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
-          <span aria-current="page">Víno</span>
-        </nav>
-
-        <div class="hero__media" aria-hidden="true">
-          <img src="pics/wine_product.avif" alt="Víno (ilustrační foto)" loading="eager" decoding="async" width="900" height="700" />
-        </div>
-
-        <div>
-          <h1 class="product-hero__title">Víno</h1>
-          <p class="product-hero__lead">Víno k delikatesám – bílé, červené i růžové. Skvělé kombinace k sýrům a olivám.</p>
-          <div class="product-meta" aria-label="Rychlé štítky">
-            <span class="tag">K sýrům 🧀</span>
-            <span class="tag">K olivám 🫒</span>
-            <span class="tag">Dárky 🎁</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--light" aria-label="Seznam produktů">
-      <div class="container section__inner">
-        <header class="section__header">
-          <h2>Vybrané produkty</h2>
-          <p class="section__subtitle">Ceny a dostupnost se mohou lišit – pro aktuální nabídku nám zavolejte nebo se zastavte na prodejně.</p>
-        </header>
-
-        <div class="product-grid is-visible">
-          <article class="product-card">
-            <div class="product-card__img"><img src="pics/wine_product.avif" alt="Bílé suché" loading="lazy" decoding="async" /></div>
-            <div class="product-card__body">
-              <h2 class="product-card__title">Bílé suché</h2>
-              <p class="product-card__desc">Lehké a minerální – ideální k olivám.</p>
-              <p class="product-card__meta"><span class="price">od 220 Kč</span></p>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__img"><img src="pics/wine_product.avif" alt="Červené polosuché" loading="lazy" decoding="async" /></div>
-            <div class="product-card__body">
-              <h2 class="product-card__title">Červené polosuché</h2>
-              <p class="product-card__desc">Plnější chuť, vhodné k sýrům.</p>
-              <p class="product-card__meta"><span class="price">od 260 Kč</span></p>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__img"><img src="pics/wine_product.avif" alt="Retsina" loading="lazy" decoding="async" /></div>
-            <div class="product-card__body">
-              <h2 class="product-card__title">Retsina</h2>
-              <p class="product-card__desc">Tradiční řecký styl – skvělý zážitek pro zvědavé chutě.</p>
-              <p class="product-card__meta"><span class="price">od 240 Kč</span></p>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__img"><img src="pics/wine_product.avif" alt="Růžové" loading="lazy" decoding="async" /></div>
-            <div class="product-card__body">
-              <h2 class="product-card__title">Růžové</h2>
-              <p class="product-card__desc">Osvěžující na léto – k lehkým delikatesám.</p>
-              <p class="product-card__meta"><span class="price">od 230 Kč</span></p>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__img"><img src="pics/wine_product.avif" alt="Dárkové balení" loading="lazy" decoding="async" /></div>
-            <div class="product-card__body">
-              <h2 class="product-card__title">Dárkové balení</h2>
-              <p class="product-card__desc">Víno + delikatesy – ideální jako dárek.</p>
-              <p class="product-card__meta"><span class="price">od 490 Kč</span></p>
-            </div>
-          </article>
-        </div>
-
-        <div class="section__header">
-          <p class="section__subtitle">Rádi doporučíme párování s olivami a sýry podle chuti (lehké / plné / suché).</p>
-          <div class="product-meta">
-            <a class="btn btn--primary" href="index.html#contact">Kontakt</a>
-            <a class="btn btn--ghost" href="index.html#products">Zpět na kategorie</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> Vaše Olivy. Všechna práva vyhrazena.</p>
-      <a class="to-top" href="#main">Nahoru ↑</a>
-    </div>
-  </footer>
-
-  <script src="script.js" defer></script>
+</div>
+</div>
+<header class="header" data-header="">
+<div class="container header__inner">
+<a aria-label="Vaše Olivy – na začátek stránky" class="brand" href="index.html#top">
+<img alt="Logo Vaše Olivy" class="brand__logo" height="56" src="pics/logo_orisky.png" width="56"/>
+<span class="brand__text">
+<span class="brand__name">Vítejte ve Moje Oříšky a Vaše Olivy</span>
+</span>
+</a>
+<button aria-controls="site-nav" aria-expanded="false" aria-label="Otevřít menu" class="nav-toggle" type="button">
+<span aria-hidden="true" class="nav-toggle__icon"></span>
+</button>
+<nav aria-label="Hlavní navigace" class="nav" id="site-nav">
+<ul class="nav__list">
+<li><a class="nav__link" href="index.html#about">O nás</a></li>
+<li><a class="nav__link" href="index.html#products">Produkty</a></li>
+<li><a class="nav__link" href="index.html#contact">Kontakt</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section aria-label="Víno" class="product-hero">
+<div class="container product-hero__inner">
+<nav aria-label="Drobečková navigace" class="breadcrumbs">
+<a href="index.html">Domů</a>
+<span aria-hidden="true" class="breadcrumbs__sep">/</span>
+<a href="index.html#products">Produkty</a>
+<span aria-hidden="true" class="breadcrumbs__sep">/</span>
+<span aria-current="page">Víno</span>
+</nav>
+<div aria-hidden="true" class="hero__media">
+<img alt="Víno a vinice (ilustrační foto)" decoding="async" height="700" loading="eager" src="pics/vine1.avif" width="900"/>
+</div>
+<div>
+<h1 class="product-hero__title">Víno</h1>
+<p class="product-hero__lead">Víno, které sedne k vašemu stolu – od lehkých bílých po plná červená.</p>
+<div aria-label="Rychlé štítky" class="product-meta"><span class="tag">Červené / bílé / rosé</span><span class="tag">Doporučení na míru</span><span class="tag">Skvělé párování</span></div>
+</div>
+</div>
+</section>
+<section aria-label="Seznam produktů" class="section section--light">
+<div class="container section__inner">
+<header class="section__header">
+<h2>Vybrané produkty</h2>
+<p class="section__subtitle">Ceny a dostupnost se mohou lišit – pro aktuální nabídku nám zavolejte nebo se zastavte na prodejně.</p>
+</header>
+<div class="product-grid is-visible"><article class="product-card"><div class="product-card__img"><img alt="Bílé víno – svěží styl" decoding="async" loading="lazy" src="pics/wine_product.avif"/></div><div class="product-card__body"><h2 class="product-card__title">Bílé víno – svěží styl</h2><p class="product-card__desc">Lehké, ovocné, ideální k sýrům.</p><p class="product-card__meta"><span class="price">od 199 Kč</span></p></div></article><article class="product-card"><div class="product-card__img"><img alt="Červené víno – plnější styl" decoding="async" loading="lazy" src="pics/wine_product.avif"/></div><div class="product-card__body"><h2 class="product-card__title">Červené víno – plnější styl</h2><p class="product-card__desc">Výraznější chuť, skvělé k olivám.</p><p class="product-card__meta"><span class="price">od 229 Kč</span></p></div></article><article class="product-card"><div class="product-card__img"><img alt="Rosé – letní volba" decoding="async" loading="lazy" src="pics/vine1.avif"/></div><div class="product-card__body"><h2 class="product-card__title">Rosé – letní volba</h2><p class="product-card__desc">Jemné, osvěžující.</p><p class="product-card__meta"><span class="price">od 209 Kč</span></p></div></article><article class="product-card"><div class="product-card__img"><img alt="Doporučení k prkénku" decoding="async" loading="lazy" src="pics/wine_product.avif"/></div><div class="product-card__body"><h2 class="product-card__title">Doporučení k prkénku</h2><p class="product-card__desc">Rádi vybereme ideální láhev k vašemu výběru.</p><p class="product-card__meta"><span class="price">na dotaz</span></p></div></article></div>
+<div class="section__header">
+<p class="section__subtitle">Chcete doporučit kombinaci (olivy + sýr + víno)? Napište nám nebo se zeptejte na prodejně – rádi poradíme.</p>
+<div class="product-meta">
+<a class="btn btn--primary" href="index.html#contact">Kontakt</a>
+<a class="btn btn--ghost" href="index.html#products">Zpět na kategorie</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container footer__inner">
+<p>© <span id="year"></span> Vaše Olivy. Všechna práva vyhrazena.</p>
+<a class="to-top" href="#main">Nahoru ↑</a>
+</div>
+</footer>
+<script defer="" src="script.js"></script>
 </body>
-
 </html>
