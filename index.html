@@ -15,6 +15,7 @@
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="pics/logo.jpg" />
+  <link rel="canonical" href="index.html" />
 </head>
 
 <body>
@@ -106,61 +107,46 @@
       <div class="container section__inner">
         <header class="section__header section__header--center">
           <h2>Produkty</h2>
-          <p class="section__subtitle">Klikněte na kategorii a zobrazí se konkrétní produkty.</p>
+          <p class="section__subtitle">Vyberte kategorii a prohlédněte si produkty.</p>
         </header>
 
-        <!-- Category chooser -->
-        <div class="product-cats" role="tablist" aria-label="Kategorie produktů" id="productTabs">
-          <button class="product-cat is-active" type="button" role="tab" aria-selected="true"
-            data-category="olives" aria-controls="productPanel" id="tab-olives">
+        <!-- Category links -->
+        <div class="product-cats" aria-label="Kategorie produktů">
+          <a class="product-cat" href="olivy.html">
             <span class="product-cat__img">
               <img src="/pics/olives_product.jpeg" alt="Olivy" loading="lazy" decoding="async" />
             </span>
             <span class="product-cat__label">Olivy</span>
-          </button>
+          </a>
 
-          <button class="product-cat" type="button" role="tab" aria-selected="false"
-            data-category="cheese" aria-controls="productPanel" id="tab-cheese">
+          <a class="product-cat" href="syry.html">
             <span class="product-cat__img">
               <img src="/pics/cheese_product.jpeg" alt="Sýry a mléčné výrobky" loading="lazy" decoding="async" />
             </span>
             <span class="product-cat__label">Sýry</span>
-          </button>
+          </a>
 
-          <button class="product-cat" type="button" role="tab" aria-selected="false"
-            data-category="wine" aria-controls="productPanel" id="tab-wine">
+          <a class="product-cat" href="vino.html">
             <span class="product-cat__img">
               <img src="/pics/wine_product.avif" alt="Víno" loading="lazy" decoding="async" />
             </span>
             <span class="product-cat__label">Víno</span>
-          </button>
+          </a>
 
-          <button class="product-cat" type="button" role="tab" aria-selected="false"
-            data-category="coffee" aria-controls="productPanel" id="tab-coffee">
+          <a class="product-cat" href="kava.html">
             <span class="product-cat__img">
               <!-- dočasný obrázek (nahraďte kávou) -->
               <img src="/pics/coffe_product.jpg" alt="Káva" loading="lazy" decoding="async" />
             </span>
             <span class="product-cat__label">Káva</span>
-          </button>
+          </a>
 
-          <button class="product-cat" type="button" role="tab" aria-selected="false"
-            data-category="chilli" aria-controls="productPanel" id="tab-chilli">
+          <a class="product-cat" href="med.html">
             <span class="product-cat__img">
-              <img src="/pics/honey_product.jpg" alt="Chilli speciality" loading="lazy" decoding="async" />
+              <img src="/pics/honey_product.jpg" alt="Med" loading="lazy" decoding="async" />
             </span>
-            <span class="product-cat__label">Chilli</span>
-          </button>
-        </div>
-
-        <!-- Products panel -->
-        <div class="product-panel" id="productPanel" role="tabpanel" aria-labelledby="tab-olives">
-          <div class="product-panel__head">
-            <h3 class="product-panel__title" id="productTitle">Olivy</h3>
-            <p class="product-panel__subtitle" id="productSubtitle">Vybrané olivy z Řecka a Balkánu (demo produkty).</p>
-          </div>
-
-          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+            <span class="product-cat__label">Med</span>
+          </a>
         </div>
       </div>
     </section>
@@ -215,192 +201,7 @@
     </div>
   </footer>
 
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile nav
-    const header = document.querySelector("[data-header]");
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.getElementById("site-nav");
-
-    function setNav(open) {
-      toggle.setAttribute("aria-expanded", String(open));
-      header.classList.toggle("is-open", open);
-      document.body.classList.toggle("no-scroll", open);
-    }
-
-    toggle?.addEventListener("click", () => {
-      const open = toggle.getAttribute("aria-expanded") !== "true";
-      setNav(open);
-    });
-
-    nav?.addEventListener("click", (e) => {
-      const link = e.target.closest("a");
-      if (link && toggle.getAttribute("aria-expanded") === "true") setNav(false);
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") setNav(false);
-    });
-
-    document.addEventListener("click", (e) => {
-      if (toggle.getAttribute("aria-expanded") === "true") {
-        const isClickInsideNav = nav.contains(e.target);
-        const isClickOnToggle = toggle.contains(e.target);
-        if (!isClickInsideNav && !isClickOnToggle) setNav(false);
-      }
-    });
-
-    // ===== Products (categories -> products swap) =====
-    const productData = {
-      olives: {
-        title: "Olivy",
-        subtitle: "Vybrané olivy z Řecka a Balkánu (demo produkty).",
-        items: [
-          { name: "Kalamata Premium", desc: "Masité olivy, ideální k vínu.", price: "od 120 Kč" },
-          { name: "Zelené plněné mandlemi", desc: "Jemně slané a křupavé.", price: "od 135 Kč" },
-          { name: "Mix oliv s bylinkami", desc: "Středomořská směs, skvělá na stůl.", price: "od 140 Kč" },
-          { name: "Olivy s citronem", desc: "Svěží chuť do salátů i k rybám.", price: "od 130 Kč" },
-          { name: "Sušené olivy", desc: "Intenzivní chuť, perfektní do těstovin.", price: "od 150 Kč" },
-        ]
-      },
-      cheese: {
-        title: "Sýry",
-        subtitle: "Řecké a balkánské sýry (demo produkty).",
-        items: [
-          { name: "Feta blok", desc: "Klasika do salátu i na pečení.", price: "od 95 Kč" },
-          { name: "Halloumi", desc: "Perfektní na gril / pánev.", price: "od 110 Kč" },
-          { name: "Kozí sýr", desc: "Jemný, krémový a voňavý.", price: "od 125 Kč" },
-          { name: "Balkánský sýr", desc: "Slanější varianta, výborná do pomazánek.", price: "od 90 Kč" },
-          { name: "Sýrová pomazánka", desc: "Rychlá večeře nebo na chlebíčky.", price: "od 75 Kč" },
-        ]
-      },
-      wine: {
-        title: "Víno",
-        subtitle: "Víno k delikatesám (demo produkty).",
-        items: [
-          { name: "Bílé suché", desc: "Lehké a minerální.", price: "od 220 Kč" },
-          { name: "Červené polosuché", desc: "Plnější chuť, vhodné k sýrům.", price: "od 260 Kč" },
-          { name: "Retsina", desc: "Tradiční řecký styl.", price: "od 240 Kč" },
-          { name: "Růžové", desc: "Osvěžující na léto.", price: "od 230 Kč" },
-          { name: "Dárkové balení", desc: "Víno + delikatesy.", price: "od 490 Kč" },
-        ]
-      },
-      coffee: {
-        title: "Káva",
-        subtitle: "Zrnková i mletá (demo produkty).",
-        items: [
-          { name: "Espresso blend", desc: "Čokoládové tóny, bohatá crema.", price: "od 190 Kč" },
-          { name: "Single origin", desc: "Ovocnější profil, filtrovaná káva.", price: "od 240 Kč" },
-          { name: "Decaf", desc: "Bez kofeinu, ale s chutí.", price: "od 210 Kč" },
-          { name: "Mletá pro moka", desc: "Ideální do moka konvičky.", price: "od 180 Kč" },
-          { name: "Dárkový set", desc: "Káva + malá delikatesa.", price: "od 390 Kč" },
-        ]
-      },
-      chilli: {
-        title: "Chilli",
-        subtitle: "Omáčky, pasty a koření (demo produkty).",
-        items: [
-          { name: "Habanero omáčka", desc: "Pálivá, ale chuťově bohatá.", price: "od 150 Kč" },
-          { name: "Smoked paprika", desc: "Uzená paprika na maso i zeleninu.", price: "od 120 Kč" },
-          { name: "Jalapeño pasta", desc: "Skvělá do burgerů a dipů.", price: "od 135 Kč" },
-          { name: "Piri piri mix", desc: "Koření na kuře i hranolky.", price: "od 110 Kč" },
-          { name: "Cayenne", desc: "Klasika do polévek a omáček.", price: "od 95 Kč" },
-        ]
-      }
-    };
-
-    const tabRoot = document.getElementById("productTabs");
-    const tabButtons = tabRoot ? Array.from(tabRoot.querySelectorAll(".product-cat")) : [];
-    const productTitle = document.getElementById("productTitle");
-    const productSubtitle = document.getElementById("productSubtitle");
-    const productGrid = document.getElementById("productGrid");
-    const productPanel = document.getElementById("productPanel");
-
-    function renderProducts(categoryKey) {
-      const data = productData[categoryKey];
-      if (!data) return;
-
-      // panel title + aria
-      productTitle.textContent = data.title;
-      productSubtitle.textContent = data.subtitle;
-
-      // Fade swap
-      productGrid.classList.remove("is-visible");
-      productGrid.classList.add("is-swapping");
-
-      // Render after a tiny delay for smoothness
-      window.setTimeout(() => {
-        productGrid.innerHTML = data.items.map(item => `
-          <article class="product-card">
-            <div class="product-card__body">
-              <h4 class="product-card__title">${item.name}</h4>
-              <p class="product-card__desc">${item.desc}</p>
-              <p class="product-card__meta"><span class="price">${item.price}</span></p>
-            </div>
-          </article>
-        `).join("");
-
-        productGrid.classList.remove("is-swapping");
-        productGrid.classList.add("is-visible");
-      }, 120);
-    }
-
-    function setActiveTab(btn) {
-      const key = btn.dataset.category;
-
-      tabButtons.forEach(b => {
-        const active = b === btn;
-        b.classList.toggle("is-active", active);
-        b.setAttribute("aria-selected", String(active));
-        b.tabIndex = active ? 0 : -1;
-      });
-
-      // Connect panel label to active tab
-      if (productPanel && btn.id) {
-        productPanel.setAttribute("aria-labelledby", btn.id);
-      }
-
-      renderProducts(key);
-    }
-
-    tabButtons.forEach((btn, idx) => {
-      btn.addEventListener("click", () => setActiveTab(btn));
-
-      // keyboard nav (left/right, home/end)
-      btn.addEventListener("keydown", (e) => {
-        const i = tabButtons.indexOf(btn);
-        if (e.key === "ArrowRight") {
-          e.preventDefault();
-          tabButtons[(i + 1) % tabButtons.length].focus();
-        }
-        if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          tabButtons[(i - 1 + tabButtons.length) % tabButtons.length].focus();
-        }
-        if (e.key === "Home") {
-          e.preventDefault();
-          tabButtons[0].focus();
-        }
-        if (e.key === "End") {
-          e.preventDefault();
-          tabButtons[tabButtons.length - 1].focus();
-        }
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          setActiveTab(btn);
-        }
-      });
-
-      // init tabindex
-      btn.tabIndex = idx === 0 ? 0 : -1;
-    });
-
-    // Initial render
-    renderProducts("olives");
-    productGrid.classList.add("is-visible");
-  </script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
